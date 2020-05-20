@@ -7,7 +7,7 @@
     <meta name="generator" content="VuePress 1.5.0">
     
     <meta name="description" content="极简后台管理系统 (Lzpeng Boot)">
-    <link rel="preload" href="/assets/css/0.styles.c2ac77dc.css" as="style"><link rel="preload" href="/assets/js/app.eeedf50b.js" as="script"><link rel="preload" href="/assets/js/3.c4c74864.js" as="script"><link rel="preload" href="/assets/js/10.3b44cee6.js" as="script"><link rel="prefetch" href="/assets/js/11.b4fcd124.js"><link rel="prefetch" href="/assets/js/12.d984b57b.js"><link rel="prefetch" href="/assets/js/13.003cdade.js"><link rel="prefetch" href="/assets/js/4.b9229ac6.js"><link rel="prefetch" href="/assets/js/5.601439e7.js"><link rel="prefetch" href="/assets/js/6.6e8b7f8e.js"><link rel="prefetch" href="/assets/js/7.86b8864a.js"><link rel="prefetch" href="/assets/js/8.27c3ebbd.js"><link rel="prefetch" href="/assets/js/9.8f4790b8.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.af16130b.js">
+    <link rel="preload" href="/assets/css/0.styles.c2ac77dc.css" as="style"><link rel="preload" href="/assets/js/app.f8a3ce10.js" as="script"><link rel="preload" href="/assets/js/3.c4c74864.js" as="script"><link rel="preload" href="/assets/js/10.60d26b53.js" as="script"><link rel="prefetch" href="/assets/js/11.f5d72d15.js"><link rel="prefetch" href="/assets/js/12.597004dc.js"><link rel="prefetch" href="/assets/js/13.63e84971.js"><link rel="prefetch" href="/assets/js/4.b9229ac6.js"><link rel="prefetch" href="/assets/js/5.601439e7.js"><link rel="prefetch" href="/assets/js/6.c644b633.js"><link rel="prefetch" href="/assets/js/7.a7990dd2.js"><link rel="prefetch" href="/assets/js/8.27c3ebbd.js"><link rel="prefetch" href="/assets/js/9.8f4790b8.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.af16130b.js">
     <link rel="stylesheet" href="/assets/css/0.styles.c2ac77dc.css">
   </head>
   <body>
@@ -37,21 +37,18 @@
       极简后台管理系统 (Lzpeng Boot)
     </p> <p class="action"><a href="/zh/guide/" class="nav-link action-button">
   快速上手 →
-</a></p></header> <div class="features"><div class="feature"><h2>Spring 全家桶</h2> <p>后端采用 Spring Boot， Spring Security， Spring Security OAuth2， Spring Data JPA。</p></div><div class="feature"><h2>Vue 全家桶</h2> <p>前端使用 Vue， vue-element-admin， ElementUI， axios。</p></div><div class="feature"><h2>前后端分离</h2> <p>提供前端Vue、后端Spring Boot完全分离的后台管理系统基础模板。</p></div><div class="feature"><h2>代码生成器</h2> <p>只需写好实体类即可在线生成前后端代码，增删改查导入导出等直接使用。</p></div><div class="feature"><h2>基础功能完善</h2> <p>内置用户、角色、菜单、部门、岗位、通知、监控、代码生成等基础功能。</p></div><div class="feature"><h2>持续更新</h2> <p>Lzpeng Boot 还在持续更新，计划实现工作流、报表模块。</p></div></div> <div class="theme-default-content custom content__default"><h3 id="后台管理系统像数-1-2-3-一样容易"><a href="#后台管理系统像数-1-2-3-一样容易" class="header-anchor">#</a> 后台管理系统像数 1, 2, 3 一样容易</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 克隆后端项目</span>
-<span class="token function">git</span> clone https://github.com/lzpeng723/lzpeng-boot-server.git
+</a></p></header> <div class="features"><div class="feature"><h2>Spring 全家桶</h2> <p>后端采用 Spring Boot， Spring Security， Spring Security OAuth2， Spring Data JPA。</p></div><div class="feature"><h2>Vue 全家桶</h2> <p>前端使用 Vue， vue-element-admin， ElementUI， axios。</p></div><div class="feature"><h2>前后端分离</h2> <p>提供前端Vue、后端Spring Boot完全分离的后台管理系统基础模板。</p></div><div class="feature"><h2>代码生成器</h2> <p>只需写好实体类即可在线生成前后端代码，增删改查导入导出等直接使用。</p></div><div class="feature"><h2>基础功能完善</h2> <p>内置用户、角色、菜单、部门、岗位、通知、监控、代码生成等基础功能。</p></div><div class="feature"><h2>持续更新</h2> <p>Lzpeng Boot 还在持续更新，计划实现工作流、报表模块。</p></div></div> <div class="theme-default-content custom content__default"><h3 id="后台管理系统像数-1-2-3-一样容易"><a href="#后台管理系统像数-1-2-3-一样容易" class="header-anchor">#</a> 后台管理系统像数 1, 2, 3 一样容易</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 克隆项目</span>
+<span class="token function">git</span> clone https://github.com/lzpeng723/lzpeng-boot.git
 
-<span class="token comment"># 进入项目目录 安装依赖 启动项目</span>
-<span class="token builtin class-name">cd</span> lzpeng-boot-server <span class="token operator">&amp;&amp;</span> mvn compile <span class="token operator">&amp;&amp;</span> mvn springboot:run
+<span class="token comment"># 进入后端项目目录 安装依赖 启动项目</span>
+<span class="token builtin class-name">cd</span> lzpeng-boot/lzpeng-boot-server <span class="token operator">&amp;&amp;</span> mvn compile <span class="token operator">&amp;&amp;</span> mvn springboot:run
 
-<span class="token comment"># 克隆前端项目</span>
-<span class="token function">git</span> clone https://github.com/lzpeng723/lzpeng-boot-client.git
-
-<span class="token comment"># 进入项目目录 安装依赖 启动项目</span>
-<span class="token builtin class-name">cd</span> lzpeng-boot-client <span class="token operator">&amp;&amp;</span> <span class="token function">npm</span> i -S <span class="token operator">&amp;&amp;</span> <span class="token function">npm</span> run dev
+<span class="token comment"># 进入前端项目目录 安装依赖 启动项目</span>
+<span class="token builtin class-name">cd</span> lzpeng-boot/lzpeng-boot-client <span class="token operator">&amp;&amp;</span> <span class="token function">npm</span> i -S <span class="token operator">&amp;&amp;</span> <span class="token function">npm</span> run dev
 </code></pre></div><div class="custom-block warning"><p class="custom-block-title">注意</p> <p>请确保你的 jdk 版本 &gt;= 1.8，
 请确保你的 IDEA 安装 lombok 插件。</p></div></div> <div class="footer">
     MIT Licensed | Copyright (c) 2020 lzpeng723 All Rights Reserved lzpeng723
   </div></main></div><div class="global-ui"></div></div>
-    <script src="/assets/js/app.eeedf50b.js" defer></script><script src="/assets/js/3.c4c74864.js" defer></script><script src="/assets/js/10.3b44cee6.js" defer></script>
+    <script src="/assets/js/app.f8a3ce10.js" defer></script><script src="/assets/js/3.c4c74864.js" defer></script><script src="/assets/js/10.60d26b53.js" defer></script>
   </body>
 </html>
