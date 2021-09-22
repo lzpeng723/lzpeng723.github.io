@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Docker常用命令 | 小鹏杂谈</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="小鹏杂谈">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.8e965c09.css" as="style"><link rel="preload" href="/assets/js/app.74a2d3ff.js" as="script"><link rel="preload" href="/assets/js/4.8e7f96ee.js" as="script"><link rel="preload" href="/assets/js/1.1b0e515e.js" as="script"><link rel="preload" href="/assets/js/17.091cc785.js" as="script"><link rel="prefetch" href="/assets/js/10.a45bc5c7.js"><link rel="prefetch" href="/assets/js/11.016019be.js"><link rel="prefetch" href="/assets/js/12.8ecf3d35.js"><link rel="prefetch" href="/assets/js/13.56eaca3b.js"><link rel="prefetch" href="/assets/js/14.5abe8c4d.js"><link rel="prefetch" href="/assets/js/15.6fac1415.js"><link rel="prefetch" href="/assets/js/16.4fd00a4b.js"><link rel="prefetch" href="/assets/js/18.1e2c7f28.js"><link rel="prefetch" href="/assets/js/19.5d9a3017.js"><link rel="prefetch" href="/assets/js/20.7a775ea5.js"><link rel="prefetch" href="/assets/js/21.bfc7be33.js"><link rel="prefetch" href="/assets/js/22.2094d0d3.js"><link rel="prefetch" href="/assets/js/23.90e44bc2.js"><link rel="prefetch" href="/assets/js/24.bc524d53.js"><link rel="prefetch" href="/assets/js/25.e2d98157.js"><link rel="prefetch" href="/assets/js/26.0404a67a.js"><link rel="prefetch" href="/assets/js/27.6d09d4e2.js"><link rel="prefetch" href="/assets/js/28.9f1fc886.js"><link rel="prefetch" href="/assets/js/29.9b8646cf.js"><link rel="prefetch" href="/assets/js/3.c594e34c.js"><link rel="prefetch" href="/assets/js/30.5ee4d3ba.js"><link rel="prefetch" href="/assets/js/31.1ab92785.js"><link rel="prefetch" href="/assets/js/32.bd19759b.js"><link rel="prefetch" href="/assets/js/33.24083625.js"><link rel="prefetch" href="/assets/js/34.a675f120.js"><link rel="prefetch" href="/assets/js/35.da53bec9.js"><link rel="prefetch" href="/assets/js/36.be09f369.js"><link rel="prefetch" href="/assets/js/37.fb406b2c.js"><link rel="prefetch" href="/assets/js/38.ca50b4f6.js"><link rel="prefetch" href="/assets/js/39.b1bc3241.js"><link rel="prefetch" href="/assets/js/40.c60dfadd.js"><link rel="prefetch" href="/assets/js/5.5efd0b4c.js"><link rel="prefetch" href="/assets/js/6.76c1443c.js"><link rel="prefetch" href="/assets/js/7.7e412ce9.js"><link rel="prefetch" href="/assets/js/8.350a62d7.js"><link rel="prefetch" href="/assets/js/9.4b83cd5d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.8e965c09.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-1156296a><div data-v-1156296a><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-1156296a data-v-1156296a><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-4e82dffc data-v-1156296a data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>小鹏杂谈</h3> <p class="description" data-v-4e82dffc data-v-4e82dffc>小鹏杂谈</p> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><span data-v-4e82dffc>lzpeng723</span>
+            
+          <!---->
+          2021
+        </a></span></div></div> <div class="hide" data-v-1156296a><header class="navbar" data-v-1156296a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="小鹏杂谈" class="logo"> <span class="site-name">小鹏杂谈</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/开发/" class="nav-link"><i class="undefined"></i>
+  开发
+</a></li><li class="dropdown-item"><!----> <a href="/categories/运维/" class="nav-link"><i class="undefined"></i>
+  运维
+</a></li><li class="dropdown-item"><!----> <a href="/categories/后端/" class="nav-link"><i class="undefined"></i>
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端/" class="nav-link"><i class="undefined"></i>
+  前端
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      文档
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/minimal-boot/" class="nav-link"><i class="undefined"></i>
+  minimal-boot
+</a></li><li class="dropdown-item"><!----> <a href="/docs/minimal-cloud/" class="nav-link"><i class="undefined"></i>
+  minimal-cloud
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      联系方式
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/lzpeng723" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/lzpeng723" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.zhihu.com/people/lzpeng723" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-zhihu"></i>
+  知乎
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-1156296a></div> <aside class="sidebar" data-v-1156296a><div class="personal-info-wrapper" data-v-828910c6 data-v-1156296a><img src="/avatar.jpg" alt="author-avatar" class="personal-img" data-v-828910c6> <h3 class="name" data-v-828910c6>
+    lzpeng723
+  </h3> <div class="num" data-v-828910c6><div data-v-828910c6><h3 data-v-828910c6>30</h3> <h6 data-v-828910c6>Articles</h6></div> <div data-v-828910c6><h3 data-v-828910c6>11</h3> <h6 data-v-828910c6>Tags</h6></div></div> <ul class="social-links" data-v-828910c6></ul> <hr data-v-828910c6></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/开发/" class="nav-link"><i class="undefined"></i>
+  开发
+</a></li><li class="dropdown-item"><!----> <a href="/categories/运维/" class="nav-link"><i class="undefined"></i>
+  运维
+</a></li><li class="dropdown-item"><!----> <a href="/categories/后端/" class="nav-link"><i class="undefined"></i>
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端/" class="nav-link"><i class="undefined"></i>
+  前端
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      文档
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/minimal-boot/" class="nav-link"><i class="undefined"></i>
+  minimal-boot
+</a></li><li class="dropdown-item"><!----> <a href="/docs/minimal-cloud/" class="nav-link"><i class="undefined"></i>
+  minimal-cloud
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      联系方式
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/lzpeng723" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/lzpeng723" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.zhihu.com/people/lzpeng723" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-zhihu"></i>
+  知乎
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-4e82dffc data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>Docker常用命令</h3> <!----> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><span data-v-4e82dffc>lzpeng723</span>
+            
+          <!---->
+          2021
+        </a></span></div></div> <div data-v-1156296a><main class="page"><section><div class="page-title"><h1 class="title">Docker常用命令</h1> <div data-v-1ff7123e><i class="iconfont reco-account" data-v-1ff7123e><span data-v-1ff7123e>lzpeng723</span></i> <i class="iconfont reco-date" data-v-1ff7123e><span data-v-1ff7123e>9/21/2021</span></i> <!----> <i class="tags iconfont reco-tag" data-v-1ff7123e><span class="tag-item" data-v-1ff7123e>Docker</span></i></div></div> <div class="theme-reco-content content__default"><h2 id="docker介绍"><a href="#docker介绍" class="header-anchor">#</a> Docker介绍</h2> <p>Docker是一个装应用的容器</p> <p><a href="https://www.docker.com" target="_blank" rel="noopener noreferrer">官网<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html" target="_blank" rel="noopener noreferrer">阮一峰的 Docker 入门教程<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <a href="https://hub.docker.com/" target="_blank" rel="noopener noreferrer">镜像仓库官网<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <a href="https://www.imooc.com/article/25618" target="_blank" rel="noopener noreferrer">慕课网的一篇文章<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <a href="https://beltxman.com/2417.html" target="_blank" rel="noopener noreferrer">docker全流程教学<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h3 id="docker-安装"><a href="#docker-安装" class="header-anchor">#</a> Docker 安装</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code># 下载安装
+curl -s https://get.docker.com | sh
+# 查看版本
+docker version
+# 启动服务
+service docker start
+# 查看版本
+docker version
+# 允许非root用户使用docker
+sudo groupadd docker
+sudo usermod -aG docker your_username
+# 运行一个简单容器
+docker run ubuntu echo hello docker
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h3 id="镜像操作"><a href="#镜像操作" class="header-anchor">#</a> 镜像操作</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code># 拉取镜像
+docker pull [OPTIONS] NAME[:TAG]
+# 运行镜像
+docker run [OPTIONS] IMAGE[:TAG] [COMMAND] [ARG...]
+# 查看所有镜像
+docker images [OPTIONS] [REPOSITORY[:TAG]]
+# 拉取 helloword 镜像
+docker pull hello-world
+# 运行 helloword
+docker run hello-world
+# 拉取 nginx 镜像
+docker pull nginx
+# 运行nginx
+docker run nginx
+# 查看run参数
+docker run --help
+# 后台运行nginx
+docker run -d nginx
+# 删除镜像
+docker rmi 镜像id...
+
+# 搜索镜像
+docker search whalesay
+# 拉取镜像
+docker pull whalesay
+# 推送镜像
+docker push myname/whalesay
+# 运行镜像
+docker run docker/whalesay cowsay Docker很好玩!
+# 复制镜像并打标签
+docker tag docker/whalesay lzpeng/whalesay
+# 登录
+docker login
+# 推送镜像
+docker push lzpeng/whalesay
+# 删除所有镜像
+docker stop $(docker ps -q)
+docker rm $(docker ps -a -q)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br></div></div><h3 id="容器"><a href="#容器" class="header-anchor">#</a> 容器</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code># 查看运行的容器
+docker ps
+# 查看所有容器
+docker ps -a
+# 进入运行的容器
+docker exec -it 容器id bash
+# 退出容器
+exit
+# 停止运行容器
+docker stop 容器id
+# 重启运行容器
+docker restart 容器id
+# 将文件拷贝至容器
+docker cp index.html 容器id://user/share/nginx/html
+# 提交容器改变创建新的image
+docker commit -m 'fun' 容器id nginx-fun
+# 删除容器
+docker rm 容器id...
+# 宿主机文件挂载虚拟机
+docker run -P -d -v /usr/share/nginx/html nginx
+docker inspect nginx
+
+docker run -P -d -v $PWD/html:/usr/share/nginx/html nginx
+docker create -v $PWD/html:/usr/share/nginx/html -name nginx2 nginx
+docker run -it --volumes-from nginx2 nginx bash
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><h3 id="docker-网络"><a href="#docker-网络" class="header-anchor">#</a> Docker 网络</h3> <p>Bridge HOST NONE</p> <p>Bridge(docker-&gt;网桥-&gt;主机)</p> <div class="language- line-numbers-mode"><pre class="language-text"><code># 容器80映射主机8080
+docker run -d -p 8080:80 nginx
+# 查看端口是否运行
+netstat -na | grep 8080
+# 映射所有监听端口
+docker run -d -P nginx
+# 查看端口映射情况
+docker ps
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h3 id="制作自己的镜像"><a href="#制作自己的镜像" class="header-anchor">#</a> 制作自己的镜像</h3> <p>制作自己的镜像</p> <p>编写 Dockerfile文件</p> <div class="language-docker line-numbers-mode"><pre class="language-docker"><code><span class="token comment"># Docker image for springboot file run</span>
+<span class="token comment"># VERSION 0.0.1</span>
+<span class="token comment"># Author: lzpeng</span>
+<span class="token comment"># 基础镜像使用java</span>
+<span class="token instruction"><span class="token keyword">FROM</span> java:8</span>
+<span class="token comment"># 作者</span>
+<span class="token instruction"><span class="token keyword">MAINTAINER</span> lzpeng &lt;lzpeng723@gmail.com&gt;</span>
+<span class="token comment"># VOLUME 指定了临时文件目录为/tmp。</span>
+<span class="token comment"># 其效果是在主机 /var/lib/docker 目录下创建了一个临时文件，并链接到容器的/tmp</span>
+<span class="token instruction"><span class="token keyword">VOLUME</span> /tmp</span>
+<span class="token comment"># 将jar包添加到容器中并更名为app.jar</span>
+<span class="token instruction"><span class="token keyword">ADD</span> notebook-0.0.1-SNAPSHOT.jar notebook.jar</span>
+<span class="token comment"># 运行jar包</span>
+<span class="token instruction"><span class="token keyword">RUN</span> bash -c <span class="token string">'touch /notebook.jar'</span></span>
+<span class="token instruction"><span class="token keyword">EXPOSE</span> 8080</span>
+<span class="token instruction"><span class="token keyword">ENTRYPOINT</span> [<span class="token string">&quot;java&quot;</span>,<span class="token string">&quot;-Djava.security.egd=file:/dev/./urandom&quot;</span>,<span class="token string">&quot;-jar&quot;</span>,<span class="token string">&quot;/notebook.jar&quot;</span>]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p>编写 .dockerignore 文件，如需要</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>.github
+.git
+build
+node_modules
+npm-debug.log
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>生成镜像</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>docker build -t notebook:latest .
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>Dockerfile 文件支持命令</p> <table><thead><tr><th style="text-align:center;">命令</th> <th style="text-align:center;">用途</th></tr></thead> <tbody><tr><td style="text-align:center;">FROM</td> <td style="text-align:center;">基础镜像</td></tr> <tr><td style="text-align:center;">RUN</td> <td style="text-align:center;">执行命令</td></tr> <tr><td style="text-align:center;">ADD</td> <td style="text-align:center;">添加文件(支持远程ftp拷贝文件)</td></tr> <tr><td style="text-align:center;">COPY</td> <td style="text-align:center;">拷贝文件</td></tr> <tr><td style="text-align:center;">CMD</td> <td style="text-align:center;">执行命令</td></tr> <tr><td style="text-align:center;">EXPOSE</td> <td style="text-align:center;">暴露端口</td></tr> <tr><td style="text-align:center;">WORKDIR</td> <td style="text-align:center;">指定路径</td></tr> <tr><td style="text-align:center;">MAINTAINER</td> <td style="text-align:center;">维护者</td></tr> <tr><td style="text-align:center;">ENV</td> <td style="text-align:center;">设定环境变量</td></tr> <tr><td style="text-align:center;">ENTRYPOINT</td> <td style="text-align:center;">容器入口</td></tr> <tr><td style="text-align:center;">USER</td> <td style="text-align:center;">指定用户</td></tr> <tr><td style="text-align:center;">VOLUME</td> <td style="text-align:center;">挂载点</td></tr></tbody></table> <h3 id="docker-compose"><a href="#docker-compose" class="header-anchor">#</a> Docker Compose</h3> <p><a href="https://www.cnblogs.com/minseo/p/11548177.html" target="_blank" rel="noopener noreferrer">介绍<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <a href="https://www.cnblogs.com/caidingyu/p/11320021.html" target="_blank" rel="noopener noreferrer">安装<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <a href="https://docs.docker.com/compose/install/" target="_blank" rel="noopener noreferrer">安装<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <a href="https://www.runoob.com/docker/docker-compose.html" target="_blank" rel="noopener noreferrer">教程<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>运行此命令以下载Docker Compose的当前稳定版本</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>curl -L &quot;https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>换成国内的</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>curl -L &quot;https://get.daocloud.io/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>对二进制文件应用可执行权限：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>chmod +x /usr/local/bin/docker-compose
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>安装完成后，可测试 <code>docker-compose --version</code></p> <p>常见问题：安装后提示<code>docker-compose</code>找不到</p> <p>解决方法：编辑配置全局环境变量，再末尾添加以下内容</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>vim /etc/profile
+export PATH=/usr/local/bin:$PATH
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>执行<code>source /etc/profile</code>使配置立即生效</p> <h3 id="常用镜像"><a href="#常用镜像" class="header-anchor">#</a> 常用镜像</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code># Zipkin
+docker run --name zipkin -d -p 9411:9411 openzipkin/zipkin
+
+# Maven私服
+docker pull docker.bintray.io/jfrog/artifactory-oss
+
+docker run --name artifactory-oss-6.18.1 -d -v /Users/qing/JFROG_HOME/artifactory-oss-618:/var/opt/jfrog/artifactory  -p 8083:8081 docker.bintray.io/jfrog/artifactory-oss:6.18.1
+
+#Mysql
+docker run -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.7
+
+docker run -p 3306:3306 --name mysql -v /opt/mysql-5.7/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.7
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h3 id="修改镜像源为国内"><a href="#修改镜像源为国内" class="header-anchor">#</a> 修改镜像源为国内</h3> <p>daocloud,阿里云,时速云</p> <p>vim方式修改</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>sudo vim /etc/docker/daemon.json
+
+{
+    &quot;registry-mirrors&quot;: [&quot;https://registry.docker-cn.com&quot;,&quot;https://docker.mirrors.ustc.edu.cn&quot;,&quot;http://hub-mirror.c.163.com&quot;]
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>tee方式修改</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>mkdir -p /etc/docker
+sudo tee /etc/docker/daemon.json &lt;&lt;-'EOF'
+{
+  &quot;registry-mirrors&quot;: [&quot;https://registry.docker-cn.com&quot;,&quot;https://docker.mirrors.ustc.edu.cn&quot;,&quot;http://hub-mirror.c.163.com&quot;]
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>重新加载镜像源</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>systemctl daemon-reload
+systemctl restart docker
+docker info
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="遇到的问题"><a href="#遇到的问题" class="header-anchor">#</a> 遇到的问题</h3> <p>ubuntu-20.04.1-live-server-amd64 安装docker出错</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>root@ubuntu-node:~# curl -s https://get.docker.com|sh
+# Executing docker install script, commit: 3d8fe77c2c46c5b7571f94b42793905e5b3e42e4
++ sh -c apt-get update -qq &gt;/dev/null
++ sh -c DEBIAN_FRONTEND=noninteractive apt-get install -y -qq apt-transport-https ca-certificates curl &gt;/dev/null
+E: Unable to correct problems, you have held broken packages.
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>排查是安装apt-transport-https时出错</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>root@ubuntu-node:~# apt-get install -y apt-transport-https
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Some packages could not be installed. This may mean that you have
+requested an impossible situation or if you are using the unstable
+distribution that some required packages have not yet been created
+or been moved out of Incoming.
+The following information may help to resolve the situation:
+
+The following packages have unmet dependencies:
+ apt-transport-https : Depends: libapt-pkg5.0 (&gt;= 1.1~exp15) but it is not going to be installed
+E: Unable to correct problems, you have held broken packages.
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>意思是libapt-pkg5.0版本没法安装，经过检查后发现是提前修改了apt源,将apt源设为默认即可</p></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">9/22/2021, 8:56:54 AM</span></div></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-70334359><li class="level-2" data-v-70334359><a href="/blogs/Docker/Docker-Guide.html#docker介绍" class="sidebar-link reco-side-docker介绍" data-v-70334359>Docker介绍</a></li><li class="level-3" data-v-70334359><a href="/blogs/Docker/Docker-Guide.html#docker-安装" class="sidebar-link reco-side-docker-安装" data-v-70334359>Docker 安装</a></li><li class="level-3" data-v-70334359><a href="/blogs/Docker/Docker-Guide.html#镜像操作" class="sidebar-link reco-side-镜像操作" data-v-70334359>镜像操作</a></li><li class="level-3" data-v-70334359><a href="/blogs/Docker/Docker-Guide.html#容器" class="sidebar-link reco-side-容器" data-v-70334359>容器</a></li><li class="level-3" data-v-70334359><a href="/blogs/Docker/Docker-Guide.html#docker-网络" class="sidebar-link reco-side-docker-网络" data-v-70334359>Docker 网络</a></li><li class="level-3" data-v-70334359><a href="/blogs/Docker/Docker-Guide.html#制作自己的镜像" class="sidebar-link reco-side-制作自己的镜像" data-v-70334359>制作自己的镜像</a></li><li class="level-3" data-v-70334359><a href="/blogs/Docker/Docker-Guide.html#docker-compose" class="sidebar-link reco-side-docker-compose" data-v-70334359>Docker Compose</a></li><li class="level-3" data-v-70334359><a href="/blogs/Docker/Docker-Guide.html#常用镜像" class="sidebar-link reco-side-常用镜像" data-v-70334359>常用镜像</a></li><li class="level-3" data-v-70334359><a href="/blogs/Docker/Docker-Guide.html#修改镜像源为国内" class="sidebar-link reco-side-修改镜像源为国内" data-v-70334359>修改镜像源为国内</a></li><li class="level-3" data-v-70334359><a href="/blogs/Docker/Docker-Guide.html#遇到的问题" class="sidebar-link reco-side-遇到的问题" data-v-70334359>遇到的问题</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:190px;display:none;" data-v-5775ee02>
+      欢迎来到 小鹏杂谈
+    </div> <div class="operation" style="right:90px;bottom:40px;display:;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:;" data-v-5775ee02></i></div> <canvas id="banniang" width="150" height="220" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div><div class="reco-bgm-panel" data-v-b1d3339e><audio id="bgm" src="https://assets.smallsunnyfox.com/music/Seto我再没见过像你一般的星空.mp3" data-v-b1d3339e></audio> <div class="reco-float-box" style="bottom:200px;z-index:999999;display:none;" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><img src="https://assets.smallsunnyfox.com/music/1.png" data-v-b1d3339e></div> <div class="reco-bgm-box" style="left:10px;bottom:10px;z-index:999999;" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><div class="reco-bgm-cover" style="background-image:url(https://assets.smallsunnyfox.com/music/1.png);" data-v-b1d3339e><div class="mini-operation" style="display:none;" data-v-b1d3339e><i class="reco-bgm reco-bgm-pause" style="display:none;" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-play" style="display:none;" data-v-b1d3339e></i></div> <div class="falut-message" style="display:none;" data-v-b1d3339e>
+          播放失败
+        </div></div> <div class="reco-bgm-info" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><div class="info-box" data-v-b1d3339e><i class="reco-bgm reco-bgm-music music" data-v-b1d3339e></i>我再没见过 像你一般的星空</div> <div class="info-box" data-v-b1d3339e><i class="reco-bgm reco-bgm-artist" data-v-b1d3339e></i>Seto</div> <div class="reco-bgm-progress" data-v-b1d3339e><div class="progress-bar" data-v-b1d3339e><div class="bar" data-v-b1d3339e></div></div></div> <div class="reco-bgm-operation" data-v-b1d3339e><i class="reco-bgm reco-bgm-last last" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-pause pause" style="display:none;" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-play play" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-next next" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-volume1 volume" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-mute mute" style="display:none;" data-v-b1d3339e></i> <div class="volume-bar" data-v-b1d3339e><div class="bar" data-v-b1d3339e></div></div></div></div> <div class="reco-bgm-left-box" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><i class="reco-bgm reco-bgm-left" data-v-b1d3339e></i></div></div></div></div></div>
+    <script src="/assets/js/app.74a2d3ff.js" defer></script><script src="/assets/js/4.8e7f96ee.js" defer></script><script src="/assets/js/1.1b0e515e.js" defer></script><script src="/assets/js/17.091cc785.js" defer></script>
+  </body>
+</html>
