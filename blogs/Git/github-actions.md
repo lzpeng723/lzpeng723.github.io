@@ -237,9 +237,9 @@ jobs:
 第五步，保存上面的文件后，将整个仓库推送到 GitHub。
 ```
 
-GitHub 发现了 workflow 文件以后，就会自动运行。你可以在网站上实时查看[运行日志](./img/actions-run-log.png)，日志默认保存30天
+GitHub 发现了 workflow 文件以后，就会自动运行。你可以在网站上实时查看[运行日志](https://github.com/lzpeng723/lzpeng723.github.io/runs/3677817886?check_suite_focus=true)，日志默认保存30天
 
-![actions](https://www.wangbase.com/blogimg/asset/201909/bg2019091108.jpg)
+![actions](./img/actions-run-log.png)
 
 等到 workflow 运行结束，访问 [GitHub Page](https://lzpeng723.github.io)，会看到构建成果已经发上网了。
 
