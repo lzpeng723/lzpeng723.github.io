@@ -1,7 +1,7 @@
 module.exports = {
   "title": "小鹏杂谈",
   "description": "小鹏杂谈",
-  "dest": "public",
+  "dest": "dest",
   "head": [
     [
       "link",
