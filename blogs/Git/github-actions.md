@@ -177,7 +177,7 @@ jobs:
 
 第一步，这个示例需要将构建成果发到 GitHub 仓库，因此需要 GitHub 密钥。按照[官方文档](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line)，生成一个密钥。然后，将这个密钥储存到当前仓库的```Settings/Secrets```里面。
 
-![Settings/Secrets](https://www.wangbase.com/blogimg/asset/201909/bg2019091107.jpg)
+![Settings/Secrets](./img/screts-config.png)
 
 上图是储存密钥的环境变量的地方。环境变量的名字可以随便起，这里用的是```ACCESS_TOKEN```。如果你不用这个名字，后面脚本里的变量名也要跟着改。
 
@@ -215,9 +215,6 @@ jobs:
       with:
         persist-credentials: false
     - name: Install and Build
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'
       run: |
         npm install
         npm run build
@@ -240,17 +237,22 @@ jobs:
 第五步，保存上面的文件后，将整个仓库推送到 GitHub。
 ```
 
-GitHub 发现了 workflow 文件以后，就会自动运行。你可以在网站上实时查看[运行日志](https://github.com/lzpeng723/lzpeng723.github.io)，日志默认保存30天
+GitHub 发现了 workflow 文件以后，就会自动运行。你可以在网站上实时查看[运行日志](./img/actions-run-log.png)，日志默认保存30天
 
 ![actions](https://www.wangbase.com/blogimg/asset/201909/bg2019091108.jpg)
 
 等到 workflow 运行结束，访问 [GitHub Page](https://lzpeng723.github.io)，会看到构建成果已经发上网了。
+
+![home](./img/lzpeng723.github.io.home.png)
 
 以后，每次修改后推送源码，GitHub Actions 都会自动运行，将构建产物发布到网页。
 
 ### 五、参考链接
 
 [阮一峰 GitHub Actions 入门教程](http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html)
+
 [GitHub Pages 官方文档](https://help.github.com/en/categories/automating-your-workflow-with-github-actions)
+
 [Github Actions for web apps](https://lukeboyle.com/blog-posts/2019/08/github-actions-for-web-apps/), Luke Boyle
+
 [My First Week With GitHub Actions](https://medium.com/@adam.zolyak/my-first-week-with-github-actions-5d92de4c4851), Adam Zolyak
