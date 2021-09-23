@@ -1,8 +1,5 @@
 name: Sync Github Repos To Gitee
-on:
-  push:
-    branches: 
-      - master
+on: push
 jobs:
   build:
     runs-on: ubuntu-latest
