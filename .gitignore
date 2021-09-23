@@ -1,4 +1,6 @@
+.vscode/
 node_modules/
-dest
+dest/
 yarn.lock
 yarn.error
+package-lock.json

@@ -1,5 +1,5 @@
 ---
-title: git常用命令
+title: 常用 Git 命令清单
 date: 2021-09-21
 tags:
  - Git
@@ -7,110 +7,355 @@ categories:
  - 开发
 ---
 
-### git 克隆指定分支
+# 常用 Git 命令清单
+
+我每天使用 Git ，但是很多命令记不住。
+
+一般来说，日常使用只要记住下图6个命令，就可以了。但是熟练使用，恐怕要记住60～100个命令。
+![git](https://www.ruanyifeng.com/blogimg/asset/2015/bg2015120901.png)
+
+下面是我整理的常用 Git 命令清单。几个专用名词的译名如下。
+
+```
+Workspace：工作区
+Index / Stage：暂存区
+Repository：仓库区（或本地仓库）
+Remote：远程仓库
+```
+有兴趣的同学可以去 [此网站](https://oschina.gitee.io/learn-git-branching) 进行练习 Git 命令
+
+## 一、新建代码库
 
 ```bash
-git clone -b 分支名 仓库地址
+# 在当前目录新建一个Git代码库
+$ git init
+
+# 新建一个目录，将其初始化为Git代码库
+$ git init [project-name]
+
+# 下载一个项目和它的整个代码历史
+$ git clone [-b branch] [url]
 ```
 
-### add
- git add ./ 
+## 二、配置
 
-### commit 
+Git的设置文件为```.gitconfig```，它可以在用户主目录下（全局配置），也可以在项目目录下（项目配置）。
 
- git commit -m '提交信息'
+```bash
+# 显示当前的Git配置
+$ git config --list
 
-### push
+# 编辑Git配置文件
+$ git config -e [--global]
 
- git push
-
-### 初始化仓库
-
- 1、在三方代码托管平台创建自己的远程仓库。例如我们在gitee码云上创建自己的仓库，仓库名：SwiftDemo
-
-2、在本地cd进入自己的项目文件夹，初始化git
-
-3、git remote add origin "自己在三方代码托管平台上所创建仓库对应的地址"
-
-4、git add . 将本地工程文件夹所有内容添加至缓存区
-
-5、git commit - m "提交日志"
-
-6、git push -u origin master (首次推代码至远程仓库)
-
-     git push （非首次推代码至远程仓库）
-
-### Github fork后与源项目保持同步
-
-- Git 查看/添加/修改/删除源地址记录
-
+# 设置提交代码时的用户信息
+$ git config [--global] user.name "[name]"
+$ git config [--global] user.email "[email address]"
 ```
-# 查看源地址
-git remote -v
+
+## 三、增加/删除文件
+
+```bash
+# 添加指定文件到暂存区
+$ git add [file1] [file2] ...
+
+# 添加指定目录到暂存区，包括子目录
+$ git add [dir]
+
+# 添加当前目录的所有文件到暂存区
+$ git add .
+
+# 添加每个变化前，都会要求确认
+# 对于同一个文件的多处变化，可以实现分次提交
+$ git add -p
+
+# 删除工作区文件，并且将这次删除放入暂存区
+$ git rm [file1] [file2] ...
+
+# 停止追踪指定文件，但该文件会保留在工作区
+$ git rm --cached [file]
+
+# 改名文件，并且将这个改名放入暂存区
+$ git mv [file-original] [file-renamed]
+ ```
+
+## 四、代码提交 
+
+ ```bash
+ # 提交暂存区到仓库区
+$ git commit -m [message]
+
+# 提交暂存区的指定文件到仓库区
+$ git commit [file1] [file2] ... -m [message]
+
+# 提交工作区自上次commit之后的变化，直接到仓库区
+$ git commit -a
+
+# 提交时显示所有diff信息
+$ git commit -v
+
+# 使用一次新的commit，替代上一次提交
+# 如果代码没有任何新变化，则用来改写上一次commit的提交信息
+$ git commit --amend -m [message]
+
+# 重做上一次commit，并包括指定文件的新变化
+$ git commit --amend [file1] [file2] ...
+
+# 常用提交前缀
+$ git commit -m "初始化项目"
+$ git commit -m "refactor: 即不是新增功能，也不是修改bug的代码变动"
+$ git commit -m "feat: 新功能"
+$ git commit -m "feature: 新功能"
+$ git commit -m "fix: 修补bug"
+$ git commit -m "docs: 文档"
+$ git commit -m "documentation: 文档"
+$ git commit -m "style: 不影响代码运行的变动"
+$ git commit -m "test: 增加测试"
+$ git commit -m "chore: 构建过程或辅助工具的变动"
+ ```
+
+## 五、分支
+
+```bash
+# 列出所有本地分支
+$ git branch
+
+# 列出所有远程分支
+$ git branch -r
+
+# 列出所有本地分支和远程分支
+$ git branch -a
+
+# 新建一个分支，但依然停留在当前分支
+$ git branch [branch-name]
+
+# 新建一个分支，并切换到该分支
+$ git checkout -b [branch]
+
+# 新建一个分支，指向指定commit
+$ git branch [branch] [commit]
+
+# 新建一个分支，与指定的远程分支建立追踪关系
+$ git branch --track [branch] [remote-branch]
+
+# 切换到指定分支，并更新工作区
+$ git checkout [branch-name]
+
+# 切换到上一个分支
+$ git checkout -
+
+# 建立追踪关系，在现有分支与指定的远程分支之间
+$ git branch --set-upstream [branch] [remote-branch]
+
+# 合并指定分支到当前分支
+$ git merge [branch]
+
+# 选择一个commit，合并进当前分支
+$ git cherry-pick [commit]
+
+# 删除分支
+$ git branch -d [branch-name]
+
+# 删除远程分支
+$ git push origin --delete [branch-name]
+$ git branch -dr [remote/branch]
+$ git push origin :[branch-name]
+
+# 创建远程分支(本地分支push到远程)
+$ git push origin [name]
+
+# 提交本地test分支作为远程的master分支
+$ git push origin test:master
+```
+
+## 六、标签
+
+```bash
+# 列出所有tag
+$ git tag
+
+# 新建一个tag在当前commit
+$ git tag [tag]
+
+# 新建一个tag在指定commit
+$ git tag [tag] [commit]
+
+# 删除本地tag
+$ git tag -d [tag]
+
+# 删除远程tag
+$ git push origin :refs/tags/[tagName]
+
+# 查看tag信息
+$ git show [tag]
+
+# 提交指定tag
+$ git push [remote] [tag]
+
+# 提交所有tag
+$ git push [remote] --tags
+
+# 新建一个分支，指向某个tag
+$ git checkout -b [branch] [tag]
+```
+
+## 七、查看信息
+
+```bash
+# 显示有变更的文件
+$ git status
+
+# 显示当前分支的版本历史
+$ git log
+
+# 显示commit历史，以及每次commit发生变更的文件
+$ git log --stat
+
+# 搜索提交历史，根据关键词
+$ git log -S [keyword]
+
+# 显示某个commit之后的所有变动，每个commit占据一行
+$ git log [tag] HEAD --pretty=format:%s
+
+# 显示某个commit之后的所有变动，其"提交说明"必须符合搜索条件
+$ git log [tag] HEAD --grep feature
+
+# 显示某个文件的版本历史，包括文件改名
+$ git log --follow [file]
+$ git whatchanged [file]
+
+# 显示指定文件相关的每一次diff
+$ git log -p [file]
+
+# 显示过去5次提交
+$ git log -5 --pretty --oneline
+
+# 显示所有提交过的用户，按提交次数排序
+$ git shortlog -sn
+
+# 显示指定文件是什么人在什么时间修改过
+$ git blame [file]
+
+# 显示暂存区和工作区的差异
+$ git diff
+
+# 显示暂存区和上一个commit的差异
+$ git diff --cached [file]
+
+# 显示工作区与当前分支最新commit之间的差异
+$ git diff HEAD
+
+# 显示两次提交之间的差异
+$ git diff [first-branch]...[second-branch]
+
+# 显示今天你写了多少行代码
+$ git diff --shortstat "@{0 day ago}"
+
+# 显示某次提交的元数据和内容变化
+$ git show [commit]
+
+# 显示某次提交发生变化的文件
+$ git show --name-only [commit]
+
+# 显示某次提交时，某个文件的内容
+$ git show [commit]:[filename]
+
+# 显示当前分支的最近几次提交
+$ git reflog
+```
+
+## 八、远程同步
+
+```bash
+# 下载远程仓库的所有变动
+$ git fetch [remote]
+
+# 显示所有远程仓库
+$ git remote -v
+
+# 显示某个远程仓库的信息
+$ git remote show [remote]
+
+# 增加一个新的远程仓库，并命名
+$ git remote add [shortname] [url]
+
 # 修改源地址
-git remote set-url origin [GIT URL]
-# 添加源地址
-git remote add [NAME] [GIT URL]
+$ git remote set-url [shortname] [url]
+
 # 删除源地址
-git remote remove [NAME]
+$ git remote remove [shortname]
+
+# 取回远程仓库的变化，并与本地分支合并
+$ git pull [remote] [branch]
+
+# 上传本地指定分支到远程仓库
+$ git push [remote] [branch]
+
+# 强行推送当前分支到远程仓库，即使有冲突
+$ git push [remote] --force
+
+# 推送所有分支到远程仓库
+$ git push [remote] --all
 ```
 
-- 显示远程对应的地址：
+## 九、撤销
 
-```
-cd target-repo 
-git remote -v
-```
+```bash
+# 恢复暂存区的指定文件到工作区
+$ git checkout [file]
 
-这行命令的目的是显示 在 我们github远程对应仓库的地址，一般会出现 origin: https://... 这里指的是远程origin对应的是后面的地址，一般这个地址是我们自己fork的。
+# 恢复某个commit的指定文件到暂存区和工作区
+$ git checkout [commit] [file]
 
-- 增加源地址：
+# 恢复暂存区的所有文件到工作区
+$ git checkout .
 
-```
-git remote add upstream <源项目url.git>
-```
+# 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变
+$ git reset [file]
 
-这行命令的结果会增加一个 upstream 命名的对应的源项目地址，为什么用upstream呢？直接，用其他名字也可以，这样我们再 ```git remote -v``` 就会显示
+# 重置暂存区与工作区，与上一次commit保持一致
+$ git reset --hard
 
-```
-origin: https://... <自己的repo> 
-upstream: https://... <源项目的repo>
-```
+# 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变
+$ git reset [commit]
 
-- 抓取原仓库的修改文件：
+# 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致
+$ git reset --hard [commit]
 
-```
-git fetch upsrteam v5-dev
-```
+# 重置当前HEAD为指定commit，但保持暂存区和工作区不变
+$ git reset --keep [commit]
 
-- 回到master分支，或者确定所在的分支是master：
+# 新建一个commit，用来撤销指定commit
+# 后者的所有变化都将被前者抵消，并且应用到当前分支
+$ git revert [commit]
 
-```
-git checkout master
-```
-
-这个时候，分支是origin/master
-
-- 将更新的源项目分支合并到自己的项目上
-
-```
-git merge upstream/master
+# 暂时将未提交的变化移除，稍后再移入
+$ git stash
+$ git stash pop
 ```
 
-实际上，我们就是用更新后的 upstream/master 取代了 origin/master
-这样，本封存已久的古董终于可以更新到当下了！
-别急，还差一步，因为我们目前更新的是本地。
+## 十、其他
 
-- 将本地仓库push到Github上：
-
-```
-git push origin master
+```bash
+# 生成一个可供发布的压缩包
+$ git archive
 ```
 
-至此，远程自己的Github也更新完毕了。开工吧！
+## 十一、 Github fork后与源项目保持同步
 
-```
-git pull --rebase kd master
-git pull kd master
-git push kd master
+```bash
+# 增加被fork的仓库地址
+$ git remote add upstream <源项目url.git>
+
+# 抓取原仓库的修改文件
+$ git fetch upsrteam <branch>
+
+# 回到master分支，或者确定所在的分支是master
+$ git checkout master
+
+# 将更新的源项目分支合并到自己的项目上
+$ git merge upstream/master
+
+# 将本地仓库push到Github上
+$ git push origin master
 ```
