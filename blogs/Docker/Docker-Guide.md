@@ -130,7 +130,7 @@ docker ps
 
 编写 Dockerfile文件
 
-```docker
+```Dockerfile
 # Docker image for springboot file run
 # VERSION 0.0.1
 # Author: lzpeng
@@ -162,7 +162,7 @@ npm-debug.log
 生成镜像
 
 ```
-docker build -t notebook:latest .
+docker build -t lzpeng723-blog:latest .
 ```
 
 Dockerfile 文件支持命令
