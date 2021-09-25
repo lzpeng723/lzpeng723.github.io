@@ -12,7 +12,7 @@ categories:
 以管理员身份打开cmd。
 执行如下命令：
 
-```bat
+```batch
 REG ADD "HKEY_LOCAL_MACHINE\software\Microsoft\Windows NT\CurrentVersion" /v EditionId /T REG_EXPAND_SZ /d Professional /F
 ```
 
@@ -22,7 +22,7 @@ REG ADD "HKEY_LOCAL_MACHINE\software\Microsoft\Windows NT\CurrentVersion" /v Edi
 
 新建hyperv.cmd文件，内容如下：
 
-```bat
+```batch
 pushd "%~dp0"
 
 dir /b %SystemRoot%\servicing\Packages\*Hyper-V*.mum >hyper-v.txt
@@ -42,7 +42,7 @@ Dism /online /enable-feature /featurename:Microsoft-Hyper-V-All /LimitAccess /AL
 
 使用Hypervisor启用
 
-```bat
+```batch
 bcdedit /set hypervisorlaunchtype auto
 ```
 
@@ -70,18 +70,26 @@ Docker安装成功后，执行cmd命令```docker version```。
 
 ### 配置镜像加速
 
-阿里云的加速器：https://help.aliyun.com/document_detail/60750.html
+阿里云的加速器：https://<你的ID>.mirror.aliyuncs.com [申请地址](https://help.aliyun.com/document_detail/60750.html)
 
 网易加速器：http://hub-mirror.c.163.com
 
 官方中国加速器：https://registry.docker-cn.com
 
-ustc 的镜像：https://docker.mirrors.ustc.edu.cn
+七牛云加速器：https://reg-mirror.qiniu.com
+
+科大镜像(ustc) 的镜像：https://docker.mirrors.ustc.edu.cn
 
 daocloud：https://www.daocloud.io/mirror#accelerator-doc（注册后使用）
 
+
 ```json
-"registry-mirrors": ["http://hub-mirror.c.163.com", "https://docker.mirrors.ustc.edu.cn", "https://registry.docker-cn.com"]
+"registry-mirrors":  [
+    "http://hub-mirror.c.163.com",
+    "https://docker.mirrors.ustc.edu.cn",
+    "https://registry.docker-cn.com",
+    "https://reg-mirror.qiniu.com"
+]
 ```
 
 ### 运行个 Hello World 尝尝鲜
