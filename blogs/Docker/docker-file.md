@@ -18,15 +18,16 @@ categories:
 |CMD|执行命令|
 |EXPOSE|暴露端口|
 |WORKDIR|指定路径|
-|MAINTAINER|维护者|
+|LABEL|添加键值对|
+|~~~MAINTAINER (deprecated)~~~|维护者|
 |ENV|设定环境变量|
 |ENTRYPOINT|容器入口|
 |USER|指定用户|
 |VOLUME|挂载点|
 
-## 实例
+## 实例 npm 编译打包构建项目
 
-## 编写 Dockerfile 文件
+### 编写 Dockerfile 文件
 
 ```Dockerfile
 # 基础镜像使用node:alpine
@@ -47,7 +48,7 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
-## 编写 .dockerignore 文件
+### 编写 .dockerignore 文件
 
 ```
 .github
@@ -58,7 +59,7 @@ node_modules
 npm-debug.log
 ```
 
-## 构建镜像
+### 构建镜像
 
 ```
 docker build -t lzpeng723-blog:latest .

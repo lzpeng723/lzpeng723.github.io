@@ -88,7 +88,8 @@ daocloud：https://www.daocloud.io/mirror#accelerator-doc（注册后使用）
     "http://hub-mirror.c.163.com",
     "https://docker.mirrors.ustc.edu.cn",
     "https://registry.docker-cn.com",
-    "https://reg-mirror.qiniu.com"
+    "https://reg-mirror.qiniu.com",
+    "https://dockerhub.azk8s.cn"
 ]
 ```
 

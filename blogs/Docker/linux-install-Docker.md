@@ -49,7 +49,8 @@ sudo vim /etc/docker/daemon.json
         "http://hub-mirror.c.163.com",
         "https://docker.mirrors.ustc.edu.cn",
         "https://registry.docker-cn.com",
-        "https://reg-mirror.qiniu.com"
+        "https://reg-mirror.qiniu.com",
+        "https://dockerhub.azk8s.cn"
     ]
 }
 ```
@@ -65,7 +66,8 @@ sudo tee /etc/docker/daemon.json <<-'EOF'
         "http://hub-mirror.c.163.com",
         "https://docker.mirrors.ustc.edu.cn",
         "https://registry.docker-cn.com",
-        "https://reg-mirror.qiniu.com"
+        "https://reg-mirror.qiniu.com",
+        "https://dockerhub.azk8s.cn"
     ]
 }
 ```
