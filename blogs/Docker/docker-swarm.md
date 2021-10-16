@@ -55,6 +55,37 @@ worker2    -        hyperv   Running   tcp://192.168.1.13:2376           v19.03.
 docker-machine ssh manager1
 ```
 
+### 可能遇到的问题
+
+#### 卡在 Waiting for SSH to be available...
+
+```
+Running pre-create checks...
+(manager1) Unable to get the latest Boot2Docker ISO release version:  Get https://api.github.com/repos/boot2docker/boot2docker/releases/latest: dial tcp: lookup api.github.com: no such host
+Creating machine...
+(manager1) Unable to get the latest Boot2Docker ISO release version:  Get https://api.github.com/repos/boot2docker/boot2docker/releases/latest: dial tcp: lookup api.github.com: no such host
+(manager1) Copying D:\wsl2\docker\vm\cache\boot2docker.iso to D:\wsl2\docker\vm\machines\manager1\boot2docker.iso...
+(manager1) Creating SSH key...
+(manager1) Creating VM...
+(manager1) Using switch "docker"
+(manager1) Creating VHD
+(manager1) Starting VM...
+(manager1) Waiting for host to start...
+Waiting for machine to be running, this may take a few minutes...
+Detecting operating system of created instance...
+Waiting for SSH to be available...
+```
+
+解决方案见[StackOverflow](https://stackoverflow.com/questions/56792664/docker-desktop-windows-10-waiting-for-ssh-to-be-available-certificate-signe)
+只需要在创建虚拟机时增加参数`--native-ssh`
+
+```
+docker-machine --native-ssh create --driver hyperv --hyperv-virtual-switch=docker manager1 && \
+docker-machine --native-ssh create --driver hyperv --hyperv-virtual-switch=docker manager2 && \
+docker-machine --native-ssh create --driver hyperv --hyperv-virtual-switch=docker worker1 && \
+docker-machine --native-ssh create --driver hyperv --hyperv-virtual-switch=docker worker2
+```
+
 ## 2. Docker Swarm 配置集群节点
 
 我们执行下面命令：

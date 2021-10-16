@@ -92,12 +92,67 @@ daocloud：https://www.daocloud.io/mirror#accelerator-doc（注册后使用）
     "https://dockerhub.azk8s.cn"
 ]
 ```
+## 修改docker文件存储位置
+
+[参考链接]: https://blog.csdn.net/u013948858/article/details/111464534
+
+### 使用WSL修改docker文件存储位置
+
+WSL2模式下docker-desktop-data vm磁盘映像通常位于以下位置：
+`C:\Users\<User>\AppData\Local\Docker\wsl\data\ext4.vhdx`
+按照以下说明将其重新定位到其他驱动器/目录，并保留所有现有的Docker数据。
+ 
+- 首先，右键单击Docker Desktop图标关闭Docker桌面，然后选择退出Docker桌面，然后，打开命令提示符：
+  ```
+  wsl --list -v
+  ```
+- 您应该能够看到，确保两个状态都已停止。
+ ```
+ NAME                   STATE           VERSION
+* docker-desktop         Stopped         2
+  docker-desktop-data    Stopped         2
+ ```
+:::tip
+默认情况下，Docker Desktop for Window会创建如下两个发行版（distro) C:\Users\<User>\AppData\Local\Docker\wsl
+docker-desktop (对应distro/ext4.vhdx)
+docker-desktop-data （对应data/ext4.vhdx）
+按官网提示：vhdx文件最大支持256G，超出大小会有异常。当然我的C盘也没那么大[官方说明](https://docs.microsoft.com/en-us/windows/wsl/compare-versions#expanding-the-size-of-your-wsl-2-virtual-hard-disk)
+:::
+- 将`docker-desktop-data`导出到文件中(备份image及相关文件)，使用如下命令
+ ```
+ D:
+ md wsl2\docker
+ wsl --export docker-desktop-data "D:\\wsl2\\docker\\docker-desktop-data.tar"
+ ```
+- 从wsl取消注册`docker-desktop-data`，请注意`C:\Users\<User>\AppData\Local\Docker\wsl\data\ext4.vhdx`文件将被自动删除。
+ ```
+ wsl --unregister docker-desktop-data
+ ```
+- 将导出的`docker-desktop-data`再导入回wsl，并设置我们想要的路径，即新的镜像及各种docker使用的文件的挂载目录，我这里设置到`D:\\docker\\wsl`
+ ```
+ wsl --import docker-desktop-data "D:\\wsl2\\docker\\wsl" "D:\\wsl2\\docker\\docker-desktop-data.tar" --version 2
+ ```
+- 命令执行完毕，就能再目录下看到文件了，这时次启动`Docker Desktop`，可以正常工作了
+
+### 如何验证有效
+
+修改前记录 `C:\Users\<User>\AppData\Local\Docker\wsl`目录文件大小（大于2G）
+修改后，在记录其文件大小（小于200M）和`D:\\wsl2\\docker\\wsl`（1.47G），然后docker pull任意一个镜像（我下载了nginx、tomcat），再看`C:\Users\<User>\AppData\Local\Docker\wsl`目录无变化，而`D:\\wsl2\\docker\\wsl`增大到2.26G
+
+如果在验证后一切没有问题，则可以删除`D:\\wsl2\\docker\\docker-desktop-data.tar`文件，记住可不是`ext4.vhdx`文件，这可是重要文件
+
+## 最后
 
 ### 运行个 Hello World 尝尝鲜
 
 ```
 docker run hello-world
 ```
+
+好了，Docker 安装完毕，开始愉快的学习 Docker 吧，[Docker学习教程](https://www.runoob.com/docker)。
+
+
+## 可能遇到的问题
 
 ### docker for windows could not read CA certificate问题
 
@@ -107,7 +162,3 @@ docker run hello-world
 - 删掉四个docker 的环境变量
 - 执行cmd命令```docker-machine rm default```
 - 以管理员身份执行cmd命令```@FOR /f "tokens=*" %i IN ('docker-machine env -u') DO @%i```
-
-## 最后
-
-好了，Docker 安装完毕，开始愉快的学习 Docker 吧，[Docker学习教程](https://www.runoob.com/docker)。

@@ -13,7 +13,7 @@ categories:
 
 # Docker Machine
 
-### 简介
+## 简介
 
 Docker Machine 是一种可以让您在虚拟主机上安装 Docker 的工具，并可以使用 docker-machine 命令来管理主机。
 
@@ -69,8 +69,17 @@ chmod +x "$HOME/bin/docker-machine.exe"
 $ docker-machine version
 docker-machine version 0.16.2, build bd45ab13
 ```
+## 配置虚拟机保存位置
 
-------
+### Windows
+
+- 添加系统环境
+ 在Windows的系统环境添加`MACHINE_STORAGE_PATH`，指向虚拟机的位置（例如：`D:\wsl2\docker\vm`）
+ 复制`boot2docker.iso`
+ 复制`C:\Users\<User>\.docker\machine\cache\boot2docker.iso`到虚拟机的位置同级目录`cache`上（例如：`D:\wsl2\docker\vm\cache`），如果不是最新的话需要下载[最新](https://api.github.com/repos/boot2docker/boot2docker/releases/latest)。
+ ```
+ setx /m MACHINE_STORAGE_PATH "D:\wsl2\docker\vm\machines"
+ ```
 
 ## 使用
 
