@@ -162,3 +162,21 @@ docker run hello-world
 - 删掉四个docker 的环境变量
 - 执行cmd命令```docker-machine rm default```
 - 以管理员身份执行cmd命令```@FOR /f "tokens=*" %i IN ('docker-machine env -u') DO @%i```
+
+
+## 卸载Docker
+
+### 运行卸载程序
+
+### 清除注册表
+
+- 按下`Window+R`唤起命令输入界面，输入`regedit`打开注册表编辑
+- 在地址栏输入`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Docker Desktop`
+- 将整个Docker Desktop组点击右键删除
+
+### [关闭 Hyper-V](https://kb.vmware.com/s/article/2146361?lang=zh_CN) 和 适用于 Linux 的 Windows 子系统
+
+```
+bcdedit /set hypervisorlaunchtype off
+```
+最后重启电脑
