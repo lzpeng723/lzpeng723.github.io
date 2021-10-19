@@ -86,6 +86,10 @@ daemon.json
   shell: curl https://get.docker.com | sh
   args:
     creates: /usr/bin/docker
+- name: 创建/etc/docker文件夹
+  file:
+    path: /etc/docker/
+    state: directory
 - name: 拷贝 docker 配置文件
   copy:
     src: daemon.json
