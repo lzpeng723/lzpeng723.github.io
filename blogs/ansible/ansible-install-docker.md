@@ -58,7 +58,17 @@ tree ./install-docker
 
 ## 编写配置文件
 
-daemon.json
+vars/main.yml
+
+```yml
+---
+# vars file for install-docker
+DOCKER_MACHINE_VERSION: v0.16.2
+DOCKER_DATA_ROOT: /opt/data/docker
+UNINSTALL_OLD_DOCKER: false
+```
+
+templates/daemon.json
 
 ```json
 {
@@ -69,7 +79,7 @@ daemon.json
         "https://reg-mirror.qiniu.com",
         "https://dockerhub.azk8s.cn"
     ],
-    "data-root": "/opt/data/docker"
+    "data-root": "{{DOCKER_DATA_ROOT}}"
 }
 ```
 
@@ -78,28 +88,71 @@ daemon.json
 ```yml
 ---
 # tasks file for install-docker
-- name: 安装 curl
+- name: 卸载旧 Docker
+  when: UNINSTALL_OLD_DOCKER
+  block:
+    - name: 停止 Docker
+      ignore_errors: true
+      service: 
+        name: docker
+        state: stopped
+    - name: 卸载旧版本 Docker
+      yum:
+        name:
+          - docker
+          - docker-client
+          - docker-client-latest
+          - docker-common
+          - docker-latest
+          - docker-latest-logrotate
+          - docker-logrotate
+          - docker-engine
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io   
+        state: absent
+    - name: 删除旧版本 Docker 数据文件夹
+      file:
+        path: "{{DOCKER_DATA_ROOT}}"
+        state: absent
+    - name: 删除 /etc/docker 文件夹
+      file:
+        path: /etc/docker
+        state: absent
+- name: 安装 yum-utils
   yum:
-    name: curl
+    name:
+      - yum-utils
     state: present
-- name: 安装 docker
-  shell: curl https://get.docker.com | sh
-  args:
-    creates: /usr/bin/docker
-- name: 创建/etc/docker文件夹
+- name: 设置 yum 源
+  command: yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+- name: 安装 Docker
+  yum:
+    name:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io   
+    state: present
+- name: 创建 /etc/docker 文件夹
   file:
     path: /etc/docker/
     state: directory
 - name: 拷贝 docker 配置文件
-  copy:
+  template:
     src: daemon.json
     dest: /etc/docker/daemon.json
 - name: 重新加载配置文件
   command: systemctl daemon-reload
-- name: 重新启动 docker
+- name: 重新启动 Docker
   service: 
     name: docker
     state: restarted
+- name: 安装 docker-machine
+  ignore_errors: true
+  get_url:
+    url: https://github.com/docker/machine/releases/download/{{DOCKER_MACHINE_VERSION}}/docker-machine-{{ansible_system}}-{{ansible_architecture}}
+    dest: /usr/local/bin/docker-machine
+    mode: '0755'
 ```
 
 ## 创建剧本

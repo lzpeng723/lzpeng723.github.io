@@ -27,7 +27,7 @@ Docker Machine 管理的虚拟主机可以是机上的，也可以是云供应�
 
 ![img](https://www.runoob.com/wp-content/uploads/2019/11/machine.png)
 
-------
+最新版本查询 [https://api.github.com/repos/docker/machine/releases/latest](https://api.github.com/repos/docker/machine/releases/latest)
 
 ## 安装
 
@@ -38,7 +38,7 @@ Docker Machine 可以在多种平台上安装使用，包括 Linux 、MacOS 以�
 ### Linux 安装命令
 
 ```
-$ base=https://github.com/docker/machine/releases/download/v0.16.0 &&
+$ base=https://github.com/docker/machine/releases/download/v0.16.2 &&
   curl -L $base/docker-machine-$(uname -s)-$(uname -m) >/tmp/docker-machine &&
   sudo mv /tmp/docker-machine /usr/local/bin/docker-machine &&
   chmod +x /usr/local/bin/docker-machine

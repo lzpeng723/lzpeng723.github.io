@@ -193,7 +193,13 @@ eu4yk2n33zm4        nginx.3             nginx:alpine        worker2             
 
 我们任意使用四个 Docker 主机中的一个 IP 地址，浏览器打开：[http://192.168.1.10:8088/](http://192.168.1.10:8088/),即可看到nginx服务正在运行
 
-## 4. Docker Stack 部署多个集群服务，以及 GUI 管理页面
+## 4. 集散集群
+
+```
+docker swarm leave --force
+```
+
+## 5. Docker Stack 部署多个集群服务，以及 GUI 管理页面
 
 docker service部署的是单个服务，我们可以使用`docker stack`进行多服务编排部署，使用的同样是`docker-compose.yml`配置文件，示例：
 
@@ -256,7 +262,7 @@ deploy-demo         3
 
 可以看到，`portainer`比`visualizer`强大太多了，甚至我们所有的操作都可以在`portainer`上完成。
 
-## 5. docker-machine、docker swarm、docker node、docker service 和 docker stack 常用命令
+## 6. docker-machine、docker swarm、docker node、docker service 和 docker stack 常用命令
 
 ### docker-machine 常用命令
 
