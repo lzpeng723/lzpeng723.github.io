@@ -10,8 +10,14 @@ categories:
 ## Docker 安装
 
 ```
+# 安装 yum-utils
+yum install -y yum-utils
+# 配置 yum 源
+yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 # 下载安装
-curl -s https://get.docker.com | sh
+curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+也可以使用国内 daocloud 一键安装命令：
+curl -sSL https://get.daocloud.io/docker | sh
 # 查看版本
 docker version
 # 启动服务
