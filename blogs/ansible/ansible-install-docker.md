@@ -72,14 +72,15 @@ templates/daemon.json
 
 ```json
 {
+    "exec-opts": ["native.cgroupdriver=systemd"],
+    "data-root": "{{DOCKER_DATA_ROOT}}",
     "registry-mirrors":  [
         "http://hub-mirror.c.163.com",
         "https://docker.mirrors.ustc.edu.cn",
         "https://registry.docker-cn.com",
         "https://reg-mirror.qiniu.com",
         "https://dockerhub.azk8s.cn"
-    ],
-    "data-root": "{{DOCKER_DATA_ROOT}}"
+    ]
 }
 ```
 
