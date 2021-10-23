@@ -5,6 +5,7 @@ tags:
  - Linux
 categories:
  - 运维
+ - 软件
 ---
 
 # VMWare 安装 CentOS7
@@ -16,6 +17,7 @@ categories:
 [VMWare最新版本唯一官方下载地址](https://www.vmware.com/go/getworkstation-win)
 
 VMWare Workstation Pro 16 密钥：（随便输哪个）
+
 `ZF3R0-FHED2-M80TY-8QYGC-NPKYF`
 `YF390-0HF8P-M81RQ-2DXQE-M2UT6`
 `ZF71R-DMX85-08DQY-8YMNC-PPHV8`
@@ -123,5 +125,5 @@ done
 
 ```
 # 安装命令行补全
-yum install -y bash-completion
+yum install -y wget vim curl bash-completion yum-utils
 ```

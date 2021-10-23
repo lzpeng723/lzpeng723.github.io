@@ -4,6 +4,7 @@ date: 2021-09-21
 tags:
  - node
 categories:
+ - 软件
  - 前端
 ---
 
@@ -44,7 +45,7 @@ npm install --global --production windows-build-tools
 |npm install|yarn|
 |npm install react --save|yarn add react|
 |npm uninstall react --save|yarn remove react|
-|npm install react --save-dev	|yarn add react --dev|
+|npm install react --save-dev|yarn add react --dev|
 |npm update --save|yarn upgrade|
 |npm run dev|yarn dev|
 |npm run build|yarn build|
