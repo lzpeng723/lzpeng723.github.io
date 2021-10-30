@@ -90,6 +90,10 @@ ZF71R-DMX85-08DQY-8YMNC-PPHV8
 [下载地址](https://git-scm.com)
 [使用教程](/blogs/Git/git-guide.html)
 
+## SVN
+
+[安装教程]()
+
 ## Node
 
 [下载地址](https://nodejs.org/zh-cn)
@@ -113,3 +117,16 @@ ZF71R-DMX85-08DQY-8YMNC-PPHV8
 ## VsCode
 
 [下载地址](https://code.visualstudio.com)
+
+## finalShell
+
+[下载地址](http://www.hostbuf.com)
+
+## WinSCP
+
+## NotePad++
+
+[下载地址1](https://notepad.plus)
+[下载地址2](https://notepad-plus.en.softonic.com)
+
+安装 NPPJsonView插件

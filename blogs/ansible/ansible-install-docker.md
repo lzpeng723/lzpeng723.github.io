@@ -3,6 +3,7 @@ title:  ansible 给多台主机安装 docker
 date: 2021-10-19
 tags:
  - ansible
+ - docker
 categories:
  - 运维
 ---
@@ -33,7 +34,7 @@ become_ask_pass = False
 
 ## 编写 hosts 文件
 
-```yml
+```
 [docker] # 组名
 CentOS7-Node1 # 主机名
 [proxy]
@@ -63,6 +64,9 @@ vars/main.yml
 ```yml
 ---
 # vars file for install-docker
+INSTALL_DOCKER_COMPOSE: true
+DOCKER_COMPOSE_VERSION: v2.0.1
+INSTALL_DOCKER_MACHINE: false
 DOCKER_MACHINE_VERSION: v0.16.2
 DOCKER_DATA_ROOT: /opt/data/docker
 UNINSTALL_OLD_DOCKER: false
@@ -148,7 +152,17 @@ templates/daemon.json
   service: 
     name: docker
     state: restarted
+- name: 开机自启 Docker
+  command: systemctl enable docker
+- name: 安装 docker-compose
+  when: INSTALL_DOCKER_COMPOSE
+  ignore_errors: true
+  get_url:
+    url: https://github.com/docker/compose/releases/download/{{DOCKER_COMPOSE_VERSION}}/docker-compose-{{ansible_system}}-{{ansible_architecture}}
+    dest: /usr/local/bin/docker-compose
+    mode: '0755'
 - name: 安装 docker-machine
+  when: INSTALL_DOCKER_MACHINE
   ignore_errors: true
   get_url:
     url: https://github.com/docker/machine/releases/download/{{DOCKER_MACHINE_VERSION}}/docker-machine-{{ansible_system}}-{{ansible_architecture}}
