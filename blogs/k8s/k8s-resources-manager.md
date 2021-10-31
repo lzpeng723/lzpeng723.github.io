@@ -1,5 +1,5 @@
 ---
-title:  3. 资源管理
+title:  3. Kubernetes详细教程-资源管理
 date: 2021-10-30
 tags:
   - Kubernetes
@@ -7,7 +7,9 @@ categories:
   - 运维
 ---
 
-[原文链接](https://gitee.com/yooome/golang/blob/main/k8s详细教程/Kubernetes详细教程.md#3-资源管理) [视频教程](https://www.bilibili.com/video/BV1Qv41167ck)
+[原文链接](https://gitee.com/yooome/golang/blob/main/k8s详细教程/Kubernetes详细教程.md#3-资源管理) [视频教程](https://www.bilibili.com/video/BV1Qv41167ck?p=12)
+
+# 4. 资源管理
 
 ## 3.1 资源管理介绍
 
@@ -36,7 +38,7 @@ YAML是一个类似 XML、JSON 的标记性语言。它强调以**数据**为中
 </heima>
 ```
 
-```yml
+```yaml
 ---
 heima:
   age: 15
@@ -57,7 +59,7 @@ YAML支持以下几种数据类型：
 - 对象：键值对的集合，又称为映射（mapping）/ 哈希（hash） / 字典（dictionary）
 - 数组：一组按次序排列的值，又称为序列（sequence） / 列表（list）
 
-```yml
+```yaml
 # 纯量, 就是指的一个简单的值，字符串、布尔值、整数、浮点数、Null、时间、日期
 # 1 布尔类型
 c1: true (或者True)

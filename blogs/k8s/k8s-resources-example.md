@@ -1,5 +1,5 @@
 ---
-title:  4. 实战入门
+title:  4. Kubernetes详细教程-实战入门
 date: 2021-10-30
 tags:
   - Kubernetes
@@ -7,7 +7,9 @@ categories:
   - 运维
 ---
 
-[原文链接](https://gitee.com/yooome/golang/blob/main/k8s详细教程/Kubernetes详细教程.md#4-实战入门) [视频教程](https://www.bilibili.com/video/BV1Qv41167ck)
+[原文链接](https://gitee.com/yooome/golang/blob/main/k8s详细教程/Kubernetes详细教程.md#4-实战入门) [视频教程](https://www.bilibili.com/video/BV1Qv41167ck?p=19)
+
+# 4. 实战入门
 
 本章节将介绍如何在kubernetes集群中部署一个nginx服务，并且能够对其进行访问。
 

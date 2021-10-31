@@ -7,7 +7,7 @@ categories:
  - 运维
 ---
 
-[原文链接](https://gitee.com/yooome/golang/blob/main/k8s详细教程/Kubernetes详细教程.md#2-kubernetes集群环境搭建) [视频教程](https://www.bilibili.com/video/BV1Qv41167ck)
+[原文链接](https://gitee.com/yooome/golang/blob/main/k8s详细教程/Kubernetes详细教程.md#2-kubernetes集群环境搭建) [视频教程](https://www.bilibili.com/video/BV1Qv41167ck?p=5)
 
 
 # 2. kubernetes集群环境搭建
