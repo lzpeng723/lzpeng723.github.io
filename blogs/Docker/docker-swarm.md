@@ -203,7 +203,7 @@ docker swarm leave --force
 
 docker service部署的是单个服务，我们可以使用`docker stack`进行多服务编排部署，使用的同样是`docker-compose.yml`配置文件，示例：
 
-```yml
+```yaml
 version: "3"
 
 services:

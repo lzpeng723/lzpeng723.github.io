@@ -164,7 +164,7 @@ Dockerfile 内容解释：
 
 在测试目录中创建一个名为 docker-compose.yml 的文件，然后粘贴以下内容：
 
-```yml
+```yaml
 # yaml 配置
 version: '3.9'
 services:

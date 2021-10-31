@@ -110,7 +110,7 @@ done
 
 ## 修改 ansible 配置文件
 
-```yml
+```yaml
 [defaults]
 # 主机清单配置文件
 inventory      = ./hosts

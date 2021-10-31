@@ -46,7 +46,7 @@ YMAL格式是类似于JSON的文件格式，便于人理解和阅读，同时便
 
 下面是一个举例：
 
-```yml
+```yaml
 ---
 #安装与运行mysql服务
 - hosts: CentOS7-Node1
@@ -96,7 +96,7 @@ vim ping.yml
 
 编写如下配置文件
 
-```yml
+```yaml
 ---
 - hosts: test
   tasks:
@@ -113,7 +113,7 @@ ansible-playbook ~/ansible/ping.yml -f 5
 
 ### 创建系统用户、账户属性、设置密码
 
-```yml
+```yaml
 ---
 - hosts: test
   tasks:
@@ -128,7 +128,7 @@ ansible-playbook ~/ansible/ping.yml -f 5
 
 ### 删除用户
 
-```yml
+```yaml
 ---
 - hosts: test
   tasks:
@@ -140,7 +140,7 @@ ansible-playbook ~/ansible/ping.yml -f 5
 
 ### 使用vdb创建卷组和逻辑卷(手动添加磁盘sdb)
 
-```yml
+```yaml
 ---
 - hosts: test
   tasks:
@@ -170,7 +170,7 @@ ansible-playbook ~/ansible/ping.yml -f 5
 
 ### 安装软件、升级软件、安装组包
 
-```yml
+```yaml
 ---
 - hosts: test
   tasks:
@@ -191,7 +191,7 @@ ansible-playbook ~/ansible/ping.yml -f 5
 
 ### debug 显示变量值
 
-```yml
+```yaml
 ---
 - hosts: test
   tasks:
@@ -212,7 +212,7 @@ Ansible支持十几种定义变量的方式
 
 #### Inventory变量
 
-```yml
+```yaml
 [test]
 CentOS7-Node1 myvar1="hello" myvar2="h.txt" # 主机变量
 [test:vars]
@@ -223,7 +223,7 @@ yourname="lzpeng" #组变量
 
 无需定义直接在剧本中使用
 
-```yml
+```yaml
 ---
 - hosts: test
   tasks:
@@ -237,7 +237,7 @@ yourname="lzpeng" #组变量
 
 register语句可以将某个命令的执行结果保存到变量中
 
-```yml
+```yaml
 ---
 - hosts: test
   tasks:
@@ -253,7 +253,7 @@ register语句可以将某个命令的执行结果保存到变量中
 
 使用 vars 在 playbook 内定义变量
 
-```yml
+```yaml
 ---
 - hosts: test
   vars: 
@@ -268,7 +268,7 @@ register语句可以将某个命令的执行结果保存到变量中
 
 根据提示输入变量的值
 
-```yml
+```yaml
 ---
 - hosts: test
   vars_prompt: 
@@ -286,13 +286,13 @@ register语句可以将某个命令的执行结果保存到变量中
 
 ### 变量文件
 
-```yml
+```yaml
 ---
 iname: lzpeng
 ipassword: 123456
 ```
 
-```yml
+```yaml
 ---
 - hosts: test
   vars_files: variables.yml
@@ -304,7 +304,7 @@ ipassword: 123456
 
 ### 命令行变量
 
-```yml
+```yaml
 ---
 - hosts: test
   tasks:
@@ -319,7 +319,7 @@ ansible-playbook command_var.yml -e iname=lzpeng ipassword=123456
 
 ### firewalld 模块 配置防火墙策略
 
-```yml
+```yaml
 ---
 - hosts: test
   tasks:
@@ -355,7 +355,7 @@ cat ~/ansible/template/index.html
 Welcome to {{ansible_hostname}} on {{ansible_ens33.ipv4.address}}
 ```
 
-```yml
+```yaml
 ---
 - hosts: test
   tasks:

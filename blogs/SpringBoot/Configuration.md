@@ -11,7 +11,7 @@ categories:
 ## 前言
 
 自从用了Spring Boot，个人最喜欢的就是Spring Boot的配置文件了，和Spring比起，Spring Boot更加灵活，修改的某些配置也是更加得心应手。
-Spring Boot 官方提供了两种常用的配置文件格式，分别是```properties```、```YML```格式。相比于```properties```来说，```YML```更加年轻，层级也是更加分明。
+Spring Boot 官方提供了两种常用的配置文件格式，分别是```properties```、```yaml```格式。相比于```properties```来说，```yaml```更加年轻，层级也是更加分明。
 今天这篇文章就来介绍一下Spring Boot的配置文件的语法以及如何从配置文件中取值。
 
 ## properties格式简介
@@ -57,7 +57,7 @@ public class UserInfo {
 
 具体的示例如下：
 
-```yml
+```yaml
 userinfo:
     age: 25
     name: myjszl
@@ -231,7 +231,7 @@ public class DemoApplication {
 
 ### 总结
 
-```@PropertySource```指定加载自定义的配置文件，默认只能加载```properties```格式，但是可以指定```factory```属性来加载```YML```格式的配置文件。
+```@PropertySource```指定加载自定义的配置文件，默认只能加载```properties```格式，但是可以指定```factory```属性来加载```yaml```格式的配置文件。
 
 ## 总结
 

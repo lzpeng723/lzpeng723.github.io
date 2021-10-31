@@ -12,7 +12,7 @@ categories:
 
 ## 编写 ansible.cfg 文件
 
-```yml
+```yaml
 ---
 [defaults]
 # 主机清单配置文件
@@ -61,7 +61,7 @@ tree ./install-docker
 
 vars/main.yml
 
-```yml
+```yaml
 ---
 # vars file for install-docker
 INSTALL_DOCKER_COMPOSE: true
@@ -90,7 +90,7 @@ templates/daemon.json
 
 ## 编写 任务
 
-```yml
+```yaml
 ---
 # tasks file for install-docker
 - name: 卸载旧 Docker
@@ -172,7 +172,7 @@ templates/daemon.json
 
 ## 创建剧本
 
-```yml
+```yaml
 ---
 - hosts: all
   roles:

@@ -27,7 +27,7 @@ GitHub 做了一个[官方市场](https://github.com/marketplace?type=actions)�
 
 既然 actions 是代码仓库，当然就有版本的概念，用户可以引用某个具体版本的 action。下面都是合法的 action 引用，用的就是 Git 的指针概念，详见[官方文档](https://help.github.com/en/articles/about-actions#versioning-your-action)。
 
-```yml
+```yaml
 actions/setup-node@74bc508 # 指向一个 commit
 actions/setup-node@v1.0    # 指向一个标签
 actions/setup-node@master  # 指向一个分支
@@ -63,7 +63,7 @@ name: GitHub Actions Demo
 
 ```on```字段指定触发 workflow 的条件，通常是某些事件。
 
-```yml
+```yaml
 on: push
 ```
 
@@ -71,7 +71,7 @@ on: push
 
 ```on```字段也可以是事件的数组。
 
-```yml
+```yaml
 on: [push, pull_request]
 ```
 
@@ -83,7 +83,7 @@ on: [push, pull_request]
 
 指定触发事件时，可以限定分支或标签。
 
-```yml
+```yaml
 on:
   push:
     branches:    
@@ -99,7 +99,7 @@ workflow 文件的主体是```jobs```字段，表示要执行的一项或多项�
 
 ```jobs```字段里面，需要写出每一项任务的```job_id```，具体名称自定义。```job_id```里面的```name```字段是任务的说明。
 
-```yml
+```yaml
 jobs:
   my_first_job:
     name: My first job
@@ -113,7 +113,7 @@ jobs:
 
 ```needs```字段指定当前任务的依赖关系，即运行顺序。
 
-```yml
+```yaml
 jobs:
   job1:
   job2:
@@ -136,7 +136,7 @@ macOS-latest或macOS-10.14
 
 下面代码指定虚拟机环境为```ubuntu-18.04```。
 
-```yml
+```yaml
 runs-on: ubuntu-18.04
 ```
 
@@ -144,7 +144,7 @@ runs-on: ubuntu-18.04
 
 ```steps```字段指定每个 Job 的运行步骤，可以包含一个或多个步骤。每个步骤都可以指定以下三个字段。
 
-```yml
+```yaml
 jobs.<job_id>.steps.name：步骤名称。
 jobs.<job_id>.steps.run：该步骤运行的命令或者 action。
 jobs.<job_id>.steps.env：该步骤所需的环境变量。
@@ -152,7 +152,7 @@ jobs.<job_id>.steps.env：该步骤所需的环境变量。
 
 下面是一个完整的 workflow 文件的范例。
 
-```yml
+```yaml
 name: Greeting from Mona
 on: push
 
@@ -200,7 +200,7 @@ theme-cli init
 
 我们选用一个别人已经写好的 action：[JamesIves/github-pages-deploy-action](https://github.com/marketplace/actions/deploy-to-github-pages)，它提供了 workflow 的范例文件，直接拷贝过来就行了。
 
-```yml
+```yaml
 name: Build and Deploy Github Page
 on:
   push:

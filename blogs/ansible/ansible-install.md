@@ -124,7 +124,7 @@ ansible与我们其他的服务在这一点上有很大不同，这里的配置�
 
 ansible 的配置文件为`/etc/ansible/ansible.cfg`，ansible 有许多参数，下面我们列出一些常见的参数：
 
-```yml
+```yaml
 [defaults]
 # 这个参数表示资源清单inventory文件的位置
 inventory = /etc/ansible/hosts
@@ -164,7 +164,7 @@ become_ask_pass = False
 
 在配置文件中，我们提到了资源清单，这个清单就是我们的主机清单，里面保存的是一些 ansible 需要连接管理的主机列表。我们可以来看看他的定义方式：
 
-```yml
+```yaml
 # 添加以下内容
 [test] # 组名
 CentOS7-Node1 ansible_ssh_port=220 # 自定义远程ssh端口

@@ -13,7 +13,7 @@ categories:
 
 ### 默认 ansible 在遇到 error 会立刻停止 playbook
 
-```yml
+```yaml
 ---
 - hosts: test
   ignore_errors: true # 全局忽略错误
@@ -39,7 +39,7 @@ categories:
 - 仅当任务的执行状态为changed时handlers任务才执行
 - handlers任务在所有其他任务都执行后才执行
 
-```yml
+```yaml
 ---
 - hosts: test
   tasks:
@@ -63,7 +63,7 @@ categories:
 - 多个条件可以使用and或or分割
 - when表达式中调用变量不要使用{{ }}
 
-```yml
+```yaml
 ---
 - hosts: test
   tasks:
@@ -78,7 +78,7 @@ categories:
 
 - 使用 block 可以将多个任务合并为一个组
 
-```yml
+```yaml
 ---
 - hosts: test
   tasks:
@@ -102,7 +102,7 @@ categories:
 - rescue 定义 block 任务执行失败时要执行的其他任务
 - always 定义无论 block 任务是否成功，都要执行的任务
 
-```yml
+```yaml
 ---
 - hosts: test
   tasks:
@@ -126,7 +126,7 @@ categories:
 
 ### loop 循环
 
-```yml
+```yaml
 ---
 - hosts: test
   tasks:
@@ -140,7 +140,7 @@ categories:
         - Life
 ```
 
-```yml
+```yaml
 ---
 - hosts: test
   tasks:
@@ -196,7 +196,7 @@ ansible test -m copy  --vault-id=pass.txt -a "src=data.txt dest=/tmp/ mode=0600"
 
 加密变量文件
 
-```yml
+```yaml
 ---
 - hosts: test
   vars_files: variables.yml
@@ -282,7 +282,7 @@ cat ./tasks/main.yml
 - 方法一: 在role相同目录下创建一个playbook调用
 - 方法二: 在ansible.cfg设置role_path=路径
 
-```yml
+```yaml
 ---
 - hosts: test
   roles:
@@ -309,7 +309,7 @@ ansible-galaxy list -p ./roles/
 
 使用 ansible-galaxy install 或者编写 requirements.yml 文件
 
-```yml
+```yaml
 ---
 # 直接从 Ansible Galaxy 官网下载
 - src: acandid.httpd
