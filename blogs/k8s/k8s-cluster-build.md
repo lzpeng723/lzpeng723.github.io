@@ -152,16 +152,14 @@ vim /etc/fstab
 ### 2.6.7 修改linux的内核参数
 
 ```bash
-cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
-br_netfilter
-EOF
-
+# 修改linux的内核采纳数，添加网桥过滤和地址转发功能
 cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
 net.bridge.bridge-nf-call-ip6tables = 1
 net.bridge.bridge-nf-call-iptables = 1
+net.ipv4.ip_forward = 1
 EOF
-
-sudo sysctl --system
+# 重新加载配置
+sudo sysctl -p
 # 加载网桥过滤模块
 modprobe br_netfilter
 # 查看网桥过滤模块是否加载成功
@@ -178,6 +176,7 @@ yum install ipset ipvsadm -y
 # 2.添加需要加载的模块写入脚本文件
 cat <<EOF /etc/sysconfig/modules/ipvs.modules
 #!/bin/bash
+modprobe br_netfilter
 modprobe -- ip_vs
 modprobe -- ip_vs_rr
 modprobe -- ip_vs_wrr
@@ -193,23 +192,27 @@ lsmod | grep -e -ip_vs -e nf_conntrack_ipv4
 ```
 此时开始重启服务器
 
-
 ### 2.6.9 安装docker
 
+
+~~1、切换镜像源~~
+~~`wget https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo -O /etc/yum.repos.d.docker-ce.repo`~~
+
+~~2、查看当前镜像源中支持的docker版本~~
+~~`yum list docker-ce --showduplicates`~~
+
+~~3、安装特定版本的docker-ce~~
+~~必须制定--setopt=obsoletes=0，否则yum会自动安装更高版本~~
+~~`yum install --setopt=obsoletes=0 docker-ce-18.06.3.ce-3.e17 -y`~~
+
 ```bash
-# 1、切换镜像源
-wget https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo -O /etc/yum.repos.d.docker-ce.repo
-
-# 2、查看当前镜像源中支持的docker版本
-yum list docker-ce --showduplicates
-# 3、安装特定版本的docker-ce
-# 必须制定--setopt=obsoletes=0，否则yum会自动安装更高版本
-yum install --setopt=obsoletes=0 docker-ce-18.06.3.ce-3.e17 -y
-
-# 4、添加一个配置文件
+# 1、下载安装Docker
+curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+# 2、添加一个配置文件
 #Docker 在默认情况下使用Vgroup Driver为cgroupfs，而Kubernetes推荐使用systemd来替代cgroupfs
 mkdir /etc/docker
-# cat <<EOF> /etc/docker/daemon.json
+# 3、编辑Docker配置文件
+cat <<EOF /etc/docker/daemon.json
 {
     "exec-opts": ["native.cgroupdriver=systemd"],
     "data-root": "/opt/data/docker",
@@ -222,7 +225,6 @@ mkdir /etc/docker
     ]
 }
 EOF
-
 # 5、启动dokcer
 systemctl restart docker
 systemctl enable docker
@@ -244,10 +246,10 @@ gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors
 exclude=kubelet kubeadm kubectl
 
 # 3、安装kubeadm、kubelet和kubectl
-yum install --setopt=obsoletes=0 kubeadm-1.17.4-0 kubelet-1.17.4-0 kubectl-1.17.4-0 -y
+yum install kubeadm kubelet kubectl -y
 
 # 4、配置kubelet的cgroup
-#编辑/etc/sysconfig/kubelet, 添加下面的配置
+# 编辑/etc/sysconfig/kubelet, 添加下面的配置
 KUBELET_CGROUP_ARGS="--cgroup-driver=systemd"
 KUBE_PROXY_MODE="ipvs"
 
@@ -309,6 +311,7 @@ https://github.com/flannel-io/flannel/tree/master/Documentation/kube-flannel.yml
 ```
 
 ~~下载完成`kube-flannel.yml`后,将文件中的`quay.io`替换为`quay-mirror.qiniu.com`~~
+
 下载完成`kube-flannel.yml`后,将文件中的`quay.io`替换为`quay.mirrors.ustc.edu.cn`
 
 准备镜像
