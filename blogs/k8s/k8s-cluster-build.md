@@ -316,8 +316,6 @@ https://github.com/flannel-io/flannel/tree/master/Documentation/kube-flannel.yml
 # 拉取镜像
 docker pull rancher/mirrored-flannelcni-flannel-cni-plugin:v1.2
 docker pull quay.mirrors.ustc.edu.cn/coreos/flannel:v0.15.0
-docker tag quay.mirrors.ustc.edu.cn/coreos/flannel:v0.15.0 quay.io/coreos/flannel:v0.15.0
-docker rmi quay.mirrors.ustc.edu.cn/coreos/flannel:v0.15.0
 # 保存镜像
 docker save -o k8s-network-flannel-images.tar `docker images | grep flannel | awk 'BEGIN{OFS=":";ORS=" "}{print $1,$2}'`
 ```
