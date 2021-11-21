@@ -58,7 +58,7 @@ categories:
 
 ### 四、关闭防火墙
 
-要想实现文件共享，你得确定windws和Linux的防火墙处于关闭状态
+要想实现文件共享，你得确定windows和Linux的防火墙处于关闭状态
 
 #### 1.关闭Windows系统防火墙
 
