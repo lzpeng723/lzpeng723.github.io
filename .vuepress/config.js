@@ -163,10 +163,16 @@ module.exports = {
           cover: 'https://y.qq.com/music/photo_new/T002R300x300M0000046Etze42qCxC_1.jpg'
         },
         {
-          name: '世间美好与你环环相扣',
-          artist: '柏松',
-          url: 'https://m10.music.126.net/20211219203713/ad80093b7314084aa55021232426832b/ymusic/0459/045c/520c/330c359473365e50a368ef0d43bc612f.mp3',
-          cover: 'https://y.qq.com/music/photo_new/T002R300x300M000002Ks2fK36m5UA_1.jpg'
+          name: 'Big Big World',
+          artist: 'Emilia Rydberg',
+          url: 'http://dl.stream.qqmusic.qq.com/C400000B8okl3mqaH0.m4a?guid=6078645931&vkey=8ACF8B2D86E1B17AF03E35999FCC7CEF5194C9129F4E00BA2FCAB50A182EA57BEEA644212CA3D38FC110DB7AB8CBA56C232A7860EB892342&uin=1500913306&fromtag=66',
+          cover: 'https://y.qq.com/music/photo_new/T002R300x300M000000Crx7P1dNgjK.jpg'
+        },
+        {
+          name: '热爱105°C的你',
+          artist: '阿肆',
+          url: 'http://dl.stream.qqmusic.qq.com/C400002Q0Pgw09MNCg.m4a?guid=1525072304&vkey=C13C1650104FCE30FB75EBEC41268EC05733B48DB19978A789C7D5E1A59A3B525CDC5341446AB3E3AE1ADFEABA063F7132B00111BC173AEF&uin=1500913306&fromtag=66',
+          cover: 'https://y.qq.com/music/photo_new/T002R300x300M000000iNQFf0Q60q0.jpg'
         }
       ]
     }],
