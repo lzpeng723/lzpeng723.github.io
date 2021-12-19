@@ -165,8 +165,8 @@ module.exports = {
         {
           name: '世间美好与你环环相扣',
           artist: '柏松',
-          url: 'http://m10.music.126.net/20211219195805/c1a85cd6823ef787a3858ab16ea555c5/ymusic/0459/045c/520c/330c359473365e50a368ef0d43bc612f.mp3',
-          cover: 'https://y.qq.com/music/photo_new/T002R300x300M000003tRQaw2Kb7nN_1.jpg'
+          url: 'https://m10.music.126.net/20211219203713/ad80093b7314084aa55021232426832b/ymusic/0459/045c/520c/330c359473365e50a368ef0d43bc612f.mp3',
+          cover: 'https://y.qq.com/music/photo_new/T002R300x300M000002Ks2fK36m5UA_1.jpg'
         }
       ]
     }],
@@ -200,14 +200,14 @@ module.exports = {
         },
         {
           type: 'image',
-          src: './wx_qrcode.jpg'
+          src: '/wx_qrcode.jpg'
         }
       ],
       footer: [
         {
           type: 'button',
           text: '点我',
-          link: './click-me'
+          link: 'https://github.com/lzpeng723'
         }
       ]
     }]
