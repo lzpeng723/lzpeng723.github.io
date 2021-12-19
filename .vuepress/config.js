@@ -74,12 +74,12 @@ module.exports = {
             "text": "GitHub",
             "link": "https://github.com/lzpeng723",
             "icon": "reco-github"
-          }, 
+          },
           {
             "text": "Gitee",
             "link": "https://gitee.com/lzpeng723",
             "icon": "reco-mayun"
-          }, 
+          },
           {
             "text": "知乎",
             "link": "https://www.zhihu.com/people/lzpeng723",
@@ -157,18 +157,18 @@ module.exports = {
       audios: [
         // 网络文件示例
         {
-          name: '我再没见过 像你一般的星空',
-          artist: 'Seto',
-          url: 'https://assets.smallsunnyfox.com/music/Seto我再没见过像你一般的星空.mp3',
-          cover: 'https://assets.smallsunnyfox.com/music/1.png'
+          name: '苍穹',
+          artist: '韩磊',
+          url: 'http://dl.stream.qqmusic.qq.com/C400003lizLX38Dm1v.m4a?guid=6286738029&vkey=7E6ED0ABC93284D399196F492C4B8A78F9C26804A72BE3A3C07970B9ABF4C87FC2651D59A568266AEBD6367D48399E84A3C1A00EA35BD857&uin=&fromtag=66',
+          cover: 'https://y.qq.com/music/photo_new/T002R300x300M0000046Etze42qCxC_1.jpg'
         },
         {
-          name: '萤火之森',
-          artist: 'CMJ',
-          url: 'https://assets.smallsunnyfox.com/music/CMJ萤火之森.mp3',
-          cover: 'https://assets.smallsunnyfox.com/music/2.png'
+          name: '世间美好与你环环相扣',
+          artist: '柏松',
+          url: 'http://m10.music.126.net/20211219195805/c1a85cd6823ef787a3858ab16ea555c5/ymusic/0459/045c/520c/330c359473365e50a368ef0d43bc612f.mp3',
+          cover: 'https://y.qq.com/music/photo_new/T002R300x300M000003tRQaw2Kb7nN_1.jpg'
         }
-      ]  
+      ]
     }],
     // 评论系统
     /*
