@@ -159,20 +159,26 @@ module.exports = {
         {
           name: '苍穹',
           artist: '韩磊',
-          url: 'http://dl.stream.qqmusic.qq.com/C400003lizLX38Dm1v.m4a?guid=6286738029&vkey=7E6ED0ABC93284D399196F492C4B8A78F9C26804A72BE3A3C07970B9ABF4C87FC2651D59A568266AEBD6367D48399E84A3C1A00EA35BD857&uin=&fromtag=66',
+          url: '/music/1.m4a',
           cover: 'https://y.qq.com/music/photo_new/T002R300x300M0000046Etze42qCxC_1.jpg'
         },
         {
-          name: 'Big Big World',
-          artist: 'Emilia Rydberg',
-          url: 'http://dl.stream.qqmusic.qq.com/C400000B8okl3mqaH0.m4a?guid=6078645931&vkey=8ACF8B2D86E1B17AF03E35999FCC7CEF5194C9129F4E00BA2FCAB50A182EA57BEEA644212CA3D38FC110DB7AB8CBA56C232A7860EB892342&uin=1500913306&fromtag=66',
-          cover: 'https://y.qq.com/music/photo_new/T002R300x300M000000Crx7P1dNgjK.jpg'
+          name: '世间美好与你环环相扣',
+          artist: '柏松',
+          url: '/music/4.m4a',
+          cover: 'https://y.qq.com/music/photo_new/T002R300x300M000003tRQaw2Kb7nN_1.jpg'
         },
         {
           name: '热爱105°C的你',
           artist: '阿肆',
-          url: 'http://dl.stream.qqmusic.qq.com/C400002Q0Pgw09MNCg.m4a?guid=1525072304&vkey=C13C1650104FCE30FB75EBEC41268EC05733B48DB19978A789C7D5E1A59A3B525CDC5341446AB3E3AE1ADFEABA063F7132B00111BC173AEF&uin=1500913306&fromtag=66',
+          url: '/music/2.m4a',
           cover: 'https://y.qq.com/music/photo_new/T002R300x300M000000iNQFf0Q60q0.jpg'
+        },
+        {
+          name: 'Big Big World',
+          artist: 'Emilia Rydberg',
+          url: '/music/3.m4a',
+          cover: 'https://y.qq.com/music/photo_new/T002R300x300M000000Crx7P1dNgjK.jpg'
         }
       ]
     }],
