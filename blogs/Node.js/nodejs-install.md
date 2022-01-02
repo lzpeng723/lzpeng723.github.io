@@ -4,8 +4,7 @@ date: 2021-09-21
 tags:
  - node
 categories:
- - 软件
- - 前端
+ - Node.js
 ---
 
 ## 1 下载node
