@@ -31,9 +31,6 @@ html {
 
 ![grayscale-browser-support](./img/grayscale-browser-support.png)
 
-图片.png
-
-
 **注意:** 旧版 Internet Explorer 浏览器(4.0 to 8.0) 支持的非标准 "filter" 属性已被废弃。 IE8 及更低版本浏览器通常使用 [opacity](https://www.runoob.com/cssref/css3-pr-opacity.html) 属性。
 
 除了grayscale，还有很多其他的属性值，可以动手试试。
