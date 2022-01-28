@@ -1,6 +1,6 @@
 
-# 基础镜像使用node:alpine
-FROM node:alpine AS build
+# 基础镜像使用node:14-alpine
+FROM node:14-alpine AS build
 # 工作目录
 WORKDIR /app
 # 复制文件
