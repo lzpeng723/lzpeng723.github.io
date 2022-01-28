@@ -18,7 +18,7 @@ Spring Boot 官方提供了两种常用的配置文件格式，分别是```prope
 
 常见的一种配置文件格式，Spring中也是用这种格式，语法结构很简单，结构为：```key=value```。具体如下：
 
-```prop
+```properties
 userinfo.name=myjszl
 userinfo.age=25
 userinfo.active=true
