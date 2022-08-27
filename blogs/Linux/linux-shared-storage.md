@@ -118,4 +118,6 @@ df -T    ## 查看文件系统格式
 vim /etc/fstab
 ## 添加以下一行
 //192.168.64.1/VMShare /mnt/Windows cifs defaults,username=Everyone,password= 0 0
+## 设置/tmp目录大小
+tmpfs /tmp tmpfs nodev,nosuid,size=2G 0 0
 ```
