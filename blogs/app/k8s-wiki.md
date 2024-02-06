@@ -24,7 +24,7 @@ github 地址 : [https://github.com/abcfy2/docker_zhparser](https://github.com/a
 
 那么最后的 `k8s postgres` 配置文件如下
 
-**postgresql-pod.yml**
+### postgresql-pod.yml
 
 ```yml
 apiVersion: apps/v1
@@ -84,7 +84,7 @@ spec:
             type: DirectoryOrCreate
 ```
 
-**postgresql-svc.yml**
+### postgresql-svc.yml
 
 ```yml
 apiVersion: v1
@@ -117,14 +117,14 @@ kubectl apply -f postgresql-pod.yaml
 kubectl apply -f postgresql-svc.yaml
 ```
 
-设置目录可写
+目录设置
 
 ```bash
 mkdir -p /www/websites/postgresql/data
 chmod -R 777 /www/websites/postgresql/data
 ```
 
-## 配置 wiki数据库
+## 配置 wiki 数据库
 
 ### 进入pod
 
@@ -132,7 +132,7 @@ chmod -R 777 /www/websites/postgresql/data
 kubectl exec -it `kubectl get pods | grep postgres |  awk '{print $1}'` bash
 ```
 
-### 创建 wiki 使用 用户和库 设置数据库相关
+### 创建 wikijs 用户
 
 登录
 
@@ -155,7 +155,7 @@ ALTER USER wikijs WITH SUPERUSER;
 ```
 最后 `exit` 退出数据库命令行
 
-###  设置 wikijs 用户下 库相关
+###  设置 wikijs 用户下配置
 
 登录
 
@@ -188,7 +188,7 @@ select ts_debug('chinese_zh', '白垩纪是地球上海陆分布和生物界急�
 ```
 最后 `exit` 退出数据库命令行
 
-### 设置wikijs用户为普通用户权限
+登录 fox 用户
 
 ```bash
 # 登陆 fox用户
@@ -209,7 +209,7 @@ ALTER USER wikijs WITH NOSUPERUSER;
 
 ## k8s 配置 wiki
 
-**wiki-pod.yml**
+### wiki-pod.yml
 
 ```yml
 apiVersion: apps/v1
@@ -279,7 +279,7 @@ spec:
             type: DirectoryOrCreate
 ```
 
-**wiki-svc.yml**
+### wiki-svc.yml
 
 ```yml
 apiVersion: v1
@@ -310,7 +310,7 @@ kubectl apply -f wiki-pod.yml
 kubectl apply -f wiki-svc.yml
 ```
 
- 设置目录可写
+目录设置
 
 ```bash
 mkdir -p /www/websites/wiki/data
@@ -337,7 +337,7 @@ cat /wiki/server/modules/search/postgres/definition.yml
 修改 `/www/websites/wiki/search/definition.yml` 文件 ，案例如下
 主要是在 `- turkish` 下面一行增加 `- chinese_zh` 格式要一致
 
-**请不要直接复制以下案例内容，因为有的版本该文件会增加其他功能字段**
+请不要直接复制以下案例内容，因为有的版本该文件会增加其他功能字段
 
 ```yml
 key: postgres
@@ -462,13 +462,13 @@ kubectl apply -f wiki-pod-new.yml
 
 通过域名打开 `http://ip:30300` ,开始配置wiki。配置管理员邮箱、密码、wiki登录地址。
 
-### 配置 中文
+### 配置中文
 
 如果要配置语言为中文的的，在这个页面下 `http://ip:30300/a/locale`
 
 ![切换语言](./images/wiki-language.png)
 
-### 配置 中文搜索
+### 配置中文搜索
 
 wiki.js -> 管理 -> 搜索引擎 -> Database - PostgreSQL -> Dictionary Language 
 
@@ -481,10 +481,9 @@ wiki.js -> 管理 -> 搜索引擎 -> Database - PostgreSQL -> Dictionary Languag
 如果不配置，那么文件创建，或者上传文件会在pod容器内部，无法持久话，会丢失附件
 配置板 -> 存储 -> Local File System -> 目标配置
 内容修改为 `/wiki/content`
-最后 应用 并生效
+最后应用并生效
 
 ![配置存储](./images/wiki-storage.png)
-
 
 此时就可以使用全文检索了，如果检索不到，可以进行手动更新索引
 
