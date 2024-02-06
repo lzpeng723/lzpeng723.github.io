@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-8228a5b0","path":"/categories/yunwei/3/","title":"","lang":"en-US","frontmatter":{"layout":"Categories"},"headers":[],"git":{},"filePathRelative":null}');export{e as data};
