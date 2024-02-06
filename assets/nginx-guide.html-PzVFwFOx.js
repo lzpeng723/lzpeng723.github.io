@@ -1,0 +1,11 @@
+import{_ as e,o as s,c as t,a}from"./app-Alqy9ioH.js";const n={},r=a(`<h2 id="常用命令" tabindex="-1"><a class="header-anchor" href="#常用命令" aria-hidden="true">#</a> 常用命令</h2><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code># 检查配置文件是否正确
+nginx -t
+# 重启
+nginx -s reload
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="proxy-pass" tabindex="-1"><a class="header-anchor" href="#proxy-pass" aria-hidden="true">#</a> proxy_pass</h2><h3 id="proxy-pass配置说明" tabindex="-1"><a class="header-anchor" href="#proxy-pass配置说明" aria-hidden="true">#</a> proxy_pass配置说明</h3><p>情况1: 不带/</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>location /test/ {
+    proxy_pass http://t6:8300;
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>情况2: 带/</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>location /test/ {
+    proxy_pass http://t6:8300/;
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面两种配置，区别只在于proxy_pass转发的路径后是否带 “/”</p><p>针对情况1，如果访问url = http://server/test/test.jsp，则被nginx代理后，请求路径会便问http://proxy_pass/test/test.jsp，将test/ 作为根路径，请求test/路径下的资源</p><p>针对情况2，如果访问url = http://server/test/test.jsp，则被nginx代理后，请求路径会变为 http://proxy_pass/test.jsp，直接访问server的根资源</p><h3 id="_2-典型实例" tabindex="-1"><a class="header-anchor" href="#_2-典型实例" aria-hidden="true">#</a> 2. 典型实例</h3><p>同一个域名下，根据根路径的不同，访问不同应用及资源 例如：A应用 http://server/a ; B应用 http://server/b</p><p>A 应用和 B应用共同使用访问域名 http://server； 配置nginx代理转发时，如果采用情况2的配置方式，则会导致访问http://server/a/test.jsp时，代理到http://proxy_pass/test.jsp，导致无法访问到正确的资源，页面中如果有对根资源的访问，也都会以http://server 做为根路径访问资源，导致资源失效</p><p>针对此类情况，需要采用情况1，分别针对不用应用，设置不同的根资源路径，并保证代理后的根路径也依然有效</p>`,15),i=[r];function d(p,l){return s(),t("div",null,i)}const o=e(n,[["render",d],["__file","nginx-guide.html.vue"]]);export{o as default};
