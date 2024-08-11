@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Sync Github Repos To Gitee  # 名字随便起
-      uses: Yikun/hub-mirror-action@master  # 使用Yikun/hub-mirror-action
+      uses: Yikun/hub-mirror-action@master  # 使用Yikun/hub-mirror-action@master
       with:
         src: github/lzpeng723  # 源端账户名(github)
         dst: gitee/lzpeng723  # 目的端账户名(gitee)
