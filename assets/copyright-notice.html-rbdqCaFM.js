@@ -1,1 +1,0 @@
-import{_ as t,o as c,c as o,b as e,d as a}from"./app-CTlNizBn.js";const r={},s=e("h1",{id:"版权说明",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#版权说明","aria-hidden":"true"},"#"),a(" 版权说明")],-1),n=[s];function _(i,d){return c(),o("div",null,n)}const l=t(r,[["render",_],["__file","copyright-notice.html.vue"]]);export{l as default};
