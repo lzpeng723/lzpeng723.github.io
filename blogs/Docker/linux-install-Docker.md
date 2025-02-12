@@ -51,13 +51,32 @@ daocloud：https://www.daocloud.io/mirror#accelerator-doc（注册后使用）
 sudo vim /etc/docker/daemon.json
 
 {
-    "registry-mirrors":  [
-        "http://hub-mirror.c.163.com",
-        "https://docker.mirrors.ustc.edu.cn",
-        "https://registry.docker-cn.com",
-        "https://reg-mirror.qiniu.com",
-        "https://dockerhub.azk8s.cn"
-    ]
+    "data-root": "/kingdee/docker",
+    "log-driver": "json-file",
+    "log-opts": {
+      "max-size": "100m",
+      "max-file": "2"
+    },
+  "bip":"172.255.0.1/24",
+  "registry-mirrors":  [
+      "https://docker.1ms.run",
+      "https://docker.xuanyuan.me",
+      "https://docker.hpcloud.cloud",
+      "https://docker.m.daocloud.io",
+      "https://docker.unsee.tech",
+      "https://docker.1panel.live",
+      "http://mirrors.ustc.edu.cn",
+      "https://docker.chenby.cn",
+      "http://mirror.azure.cn",
+      "https://dockerpull.org",
+      "https://dockerhub.icu",
+      "https://hub.rat.dev",
+      "http://hub-mirror.c.163.com",
+      "https://docker.mirrors.ustc.edu.cn",
+      "https://registry.docker-cn.com",
+      "https://reg-mirror.qiniu.com",
+      "https://dockerhub.azk8s.cn"
+  ]
 }
 ```
 
@@ -68,14 +87,34 @@ mkdir -p /etc/docker
 sudo tee /etc/docker/daemon.json <<-'EOF'
 
 {
-    "registry-mirrors":  [
-        "http://hub-mirror.c.163.com",
-        "https://docker.mirrors.ustc.edu.cn",
-        "https://registry.docker-cn.com",
-        "https://reg-mirror.qiniu.com",
-        "https://dockerhub.azk8s.cn"
-    ]
+    "data-root": "/kingdee/docker",
+    "log-driver": "json-file",
+    "log-opts": {
+      "max-size": "100m",
+      "max-file": "2"
+    },
+  "bip":"172.255.0.1/24",
+  "registry-mirrors":  [
+      "https://docker.1ms.run",
+      "https://docker.xuanyuan.me",
+      "https://docker.hpcloud.cloud",
+      "https://docker.m.daocloud.io",
+      "https://docker.unsee.tech",
+      "https://docker.1panel.live",
+      "http://mirrors.ustc.edu.cn",
+      "https://docker.chenby.cn",
+      "http://mirror.azure.cn",
+      "https://dockerpull.org",
+      "https://dockerhub.icu",
+      "https://hub.rat.dev",
+      "http://hub-mirror.c.163.com",
+      "https://docker.mirrors.ustc.edu.cn",
+      "https://registry.docker-cn.com",
+      "https://reg-mirror.qiniu.com",
+      "https://dockerhub.azk8s.cn"
+  ]
 }
+
 ```
 
 ### 重新加载镜像源

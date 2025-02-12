@@ -85,12 +85,25 @@ daocloud：https://www.daocloud.io/mirror#accelerator-doc（注册后使用）
 
 ```json
 "registry-mirrors":  [
-    "http://hub-mirror.c.163.com",
-    "https://docker.mirrors.ustc.edu.cn",
-    "https://registry.docker-cn.com",
-    "https://reg-mirror.qiniu.com",
-    "https://dockerhub.azk8s.cn"
-]
+      "https://docker.1ms.run",
+      "https://docker.xuanyuan.me",
+      "https://docker.hpcloud.cloud",
+      "https://docker.m.daocloud.io",
+      "https://docker.unsee.tech",
+      "https://docker.1panel.live",
+      "http://mirrors.ustc.edu.cn",
+      "https://docker.chenby.cn",
+      "http://mirror.azure.cn",
+      "https://dockerpull.org",
+      "https://dockerhub.icu",
+      "https://hub.rat.dev",
+      "http://hub-mirror.c.163.com",
+      "https://docker.mirrors.ustc.edu.cn",
+      "https://registry.docker-cn.com",
+      "https://reg-mirror.qiniu.com",
+      "https://dockerhub.azk8s.cn"
+  ]
+
 ```
 ## 修改docker文件存储位置
 
